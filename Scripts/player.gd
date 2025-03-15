@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 class_name Player
 
 @export var SPEED = 200.0
@@ -17,10 +16,7 @@ func _physics_process(delta: float) -> void:
 func processInput(delta):
 	var xDirection := Input.get_axis("moveLeft", "moveRight");
 	var yDirection := Input.get_axis("moveUp", "moveDown");
-	if xDirection != 0:
-		sprite.flip_h = xDirection == -1
-	if yDirection != 0:
-		sprite.flip_v = yDirection == -1
+	
 	if yDirection:
 		velocity.y = yDirection * SPEED 
 	else:
