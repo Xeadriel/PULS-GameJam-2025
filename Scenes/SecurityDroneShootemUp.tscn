@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://dok1v5kmgg442"]
+
+[ext_resource type="PackedScene" uid="uid://bj7u0134b2oje" path="res://Scenes/MinigamePopup.tscn" id="1_36kb0"]
+[ext_resource type="Texture2D" uid="uid://dxo485fd5tqef" path="res://Assets/BackgroundShootemUp.png" id="2_b2xle"]
+[ext_resource type="Texture2D" uid="uid://k2wxat2lnm45" path="res://Assets/TurretBarrel.png" id="3_2eomm"]
+[ext_resource type="Script" uid="uid://bqhlbdo0v6yy7" path="res://Scenes/ShootEmUp.gd" id="3_8ojpp"]
+[ext_resource type="Script" uid="uid://c7im8duuniiqd" path="res://Scripts/TurretBarrel.gd" id="3_b2xle"]
+[ext_resource type="PackedScene" uid="uid://cn6q3hmcx7due" path="res://Scenes/Bullet.tscn" id="4_2eomm"]
+[ext_resource type="PackedScene" uid="uid://bu6n1ur0rnt3c" path="res://Scenes/EnemyShip.tscn" id="4_5gx1a"]
+[ext_resource type="Texture2D" uid="uid://cwvwqn5x2t4su" path="res://Assets/Turret.png" id="4_8ojpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eomm"]
+size = Vector2(439.5, 298)
+
+[node name="SecurityDroneShootemUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -27.0
+offset_right = 38.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinigamePopup" parent="." instance=ExtResource("1_36kb0")]
+layout_mode = 1
+
+[node name="BackgroundShootemUp" type="Sprite2D" parent="MinigamePopup"]
+position = Vector2(305, 205.5)
+scale = Vector2(0.530662, 0.455222)
+texture = ExtResource("2_b2xle")
+script = ExtResource("3_8ojpp")
+enemyShipSpawner = ExtResource("4_5gx1a")
+
+[node name="SpawnLocation1" type="Node2D" parent="MinigamePopup/BackgroundShootemUp"]
+position = Vector2(480, -250)
+
+[node name="SpawnLocation2" type="Node2D" parent="MinigamePopup/BackgroundShootemUp"]
+position = Vector2(400, -100)
+
+[node name="SpawnLocation3" type="Node2D" parent="MinigamePopup/BackgroundShootemUp"]
+position = Vector2(420, 200)
+
+[node name="HPLabel" type="Label" parent="MinigamePopup/BackgroundShootemUp"]
+z_index = 2
+offset_left = -415.0
+offset_top = -9.0
+offset_right = -350.0
+offset_bottom = 31.0
+text = "3 HP"
+
+[node name="TurretBarrel" type="Node2D" parent="MinigamePopup" node_paths=PackedStringArray("level")]
+z_index = 1
+position = Vector2(141, 205.5)
+scale = Vector2(0.492806, 0.416667)
+script = ExtResource("3_b2xle")
+level = NodePath("..")
+shot = ExtResource("4_2eomm")
+
+[node name="TurretBarrelSprite" type="Sprite2D" parent="MinigamePopup/TurretBarrel"]
+position = Vector2(60.6223, 0)
+scale = Vector2(0.645985, 0.8)
+texture = ExtResource("3_2eomm")
+
+[node name="Tip" type="Node2D" parent="MinigamePopup/TurretBarrel/TurretBarrelSprite"]
+
+[node name="Turret" type="Sprite2D" parent="MinigamePopup"]
+z_index = 1
+position = Vector2(127, 205.5)
+scale = Vector2(0.471129, 0.455505)
+texture = ExtResource("4_8ojpp")
+
+[node name="Bullets" type="Node2D" parent="MinigamePopup"]
+
+[node name="PlayArea" type="Area2D" parent="MinigamePopup"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinigamePopup/PlayArea"]
+position = Vector2(349.75, 205.5)
+shape = SubResource("RectangleShape2D_2eomm")
+
+[connection signal="lose" from="MinigamePopup/BackgroundShootemUp" to="MinigamePopup" method="onMiniGameFail"]
+[connection signal="win" from="MinigamePopup/BackgroundShootemUp" to="MinigamePopup" method="onMiniGameSuccess"]
