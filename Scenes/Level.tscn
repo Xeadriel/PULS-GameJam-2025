@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=4 uid="uid://b0nqmgrawu5n2"]
+
+[ext_resource type="PackedScene" uid="uid://b5ecr4p2dx4jv" path="res://Scenes/TileMap.tscn" id="1_vsvp5"]
+[ext_resource type="PackedScene" uid="uid://biqww6fux2puo" path="res://Scenes/Player.tscn" id="2_8rbpu"]
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_vsvp5")]
+tile_map_data = PackedByteArray("AAAAAAMAAQABAAAAAAABAAQAAQABAAAAAAABAAUAAQABAAAAAAABAAIAAQAAAAAAAAABAAMAAQABAAAAAAACAAIAAQABAAAAAAABAAEAAQABAAAAAAABAAAAAQABAAAAAAAAAAEAAQABAAAAAAAAAAIAAQABAAAAAAD//wMAAQABAAAAAAAAAAQAAQABAAAAAAAAAAUAAQABAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAADAAIAAQABAAAAAAACAAEAAQABAAAAAAACAAAAAQABAAAAAAABAP//AQABAAAAAAABAP7/AQABAAAAAAAAAP//AQABAAAAAAAAAAAAAQABAAAAAAD//wEAAQABAAAAAAD//wIAAQABAAAAAAABAAYAAQABAAAAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_8rbpu")]
