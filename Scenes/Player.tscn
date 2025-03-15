@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cel5wf05cqvk" path="res://Assets/Player Anims/PlayerUp.png" id="5_nn08x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
-radius = 13.0
-height = 72.0
+radius = 12.0
+height = 24.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
 animations = [{
@@ -53,6 +53,7 @@ animations = [{
 script = ExtResource("1_rpqav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 20)
 shape = SubResource("CapsuleShape2D_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3unioq48xo4w"]
+[gd_scene load_steps=6 format=3 uid="uid://b3unioq48xo4w"]
 
 [ext_resource type="Script" uid="uid://b6ia1vmd5apds" path="res://Scripts/InteractibleObject.gd" id="1_uw1m8"]
-[ext_resource type="PackedScene" uid="uid://dby72eheqvijx" path="res://Scenes/PressELabel.tscn" id="2_vavmc"]
+[ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="2_vavmc"]
 [ext_resource type="Texture2D" uid="uid://1o8hrbxn8h4f" path="res://icon.svg" id="3_vavmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
 size = Vector2(125, 122)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8x1u"]
+font = ExtResource("2_vavmc")
+font_size = 32
 
 [node name="InteractibleObject" type="StaticBody2D"]
 script = ExtResource("1_uw1m8")
@@ -15,11 +19,23 @@ top_level = true
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_h7xss")
 
-[node name="PressELabel" parent="." instance=ExtResource("2_vavmc")]
-offset_left = -60.0
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 6
+offset_left = -154.0
 offset_top = -98.0
-offset_right = 66.0
+offset_right = 180.0
 offset_bottom = -69.0
+text = "Press E to interact"
+label_settings = SubResource("LabelSettings_j8x1u")
+
+[node name="DestroyLabel" type="Label" parent="."]
+z_index = 6
+offset_left = -155.0
+offset_top = 72.0
+offset_right = 165.0
+offset_bottom = 101.0
+text = "Press B To Destroy"
+label_settings = SubResource("LabelSettings_j8x1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0.53, 0.0794999, 1)

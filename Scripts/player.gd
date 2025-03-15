@@ -26,6 +26,7 @@ func processInput(delta):
 		velocity.x = xDirection * SPEED 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	velocity = velocity.normalized() * SPEED
 	
 func changeAnimation():
 	if velocity.y > 0:

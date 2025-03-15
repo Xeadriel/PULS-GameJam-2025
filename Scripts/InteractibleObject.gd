@@ -4,27 +4,36 @@ class_name InteractibleObject
 var isInteractible = false
 @export var minDistance := 100.0;
 
-@onready var eLabel = $PressELabel
+@onready var interactLabel = $InteractLabel
+@onready var destroyLabel = $DestroyLabel
 @export var player: Player = null
 
 signal interact
+signal destroy
 
 func _ready() -> void:
-	eLabel.hide();
+	interactLabel.hide()
+	destroyLabel.hide()
+	
+	interactLabel.text = "Press " + InputMap.action_get_events("interact")[0].as_text()[0] + " to interact"
+	destroyLabel.text = "Press " + InputMap.action_get_events("destroy")[0].as_text()[0] + " to destroy"
 
 func _process(delta: float) -> void:
 	var distance := global_position.distance_to(player.global_position)
 	handleLabel(distance)
 	if(isInteractible && Input.is_action_just_pressed("interact")):
 		interact.emit()
+	if(isInteractible && Input.is_action_just_pressed("destroy")):
+		destroy.emit()
 
 func handleLabel(distance):
-	print(distance)
 	if(distance < minDistance):
 		isInteractible = true
 	else:
 		isInteractible = false
 	if(isInteractible):
-		eLabel.show()
+		interactLabel.show()
+		destroyLabel.show()
 	else:
-		eLabel.hide()
+		interactLabel.hide()
+		destroyLabel.hide()

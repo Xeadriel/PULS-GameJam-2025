@@ -507,7 +507,6 @@ texture_region_size = Vector2i(64, 33)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oileg"]
 texture = ExtResource("2_v51m0")
 texture_region_size = Vector2i(64, 132)
-use_texture_padding = false
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
