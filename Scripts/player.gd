@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
+
+class_name Player
+
 @export var SPEED = 200.0
 
 @onready var sprite = $Sprite2D
+
 
 func _physics_process(delta: float) -> void:
 	processInput(delta)
