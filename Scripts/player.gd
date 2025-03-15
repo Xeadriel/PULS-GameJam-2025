@@ -4,7 +4,8 @@ class_name Player
 
 @export var SPEED = 200.0
 
-@onready var sprite = $Sprite2D
+@onready var animatedSprite = $AnimatedSprite2D
+var lastVelY = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -27,4 +28,21 @@ func processInput(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 func changeAnimation():
-	pass
+	if velocity.y > 0:
+		animatedSprite.play("front")
+		lastVelY = velocity.y
+	elif velocity.y < 0:
+		animatedSprite.play("back")
+		lastVelY = velocity.y
+	
+	if lastVelY > 0:
+		if velocity.x < 0:
+			animatedSprite.flip_h = true
+		elif velocity.x > 0:
+			animatedSprite.flip_h = false
+	else:
+		if velocity.x < 0:
+			animatedSprite.flip_h = false
+		elif velocity.x > 0:
+			animatedSprite.flip_h = true
+	
