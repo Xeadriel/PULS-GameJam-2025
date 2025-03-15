@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dby72eheqvijx"]
+
+[ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="1_b72h3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8x1u"]
+font = ExtResource("1_b72h3")
+font_size = 32
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press E"
+label_settings = SubResource("LabelSettings_j8x1u")

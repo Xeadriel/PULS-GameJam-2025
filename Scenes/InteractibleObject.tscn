@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3unioq48xo4w"]
+
+[ext_resource type="Script" uid="uid://b6ia1vmd5apds" path="res://Scripts/InteractibleObject.gd" id="1_uw1m8"]
+[ext_resource type="PackedScene" uid="uid://dby72eheqvijx" path="res://Scenes/PressELabel.tscn" id="2_vavmc"]
+[ext_resource type="Texture2D" uid="uid://1o8hrbxn8h4f" path="res://icon.svg" id="3_vavmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
+size = Vector2(125, 122)
+
+[node name="InteractibleObject" type="StaticBody2D"]
+script = ExtResource("1_uw1m8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_h7xss")
+
+[node name="PressELabel" parent="." instance=ExtResource("2_vavmc")]
+offset_left = -60.0
+offset_top = -98.0
+offset_right = 66.0
+offset_bottom = -69.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.53, 0.0794999, 1)
+texture = ExtResource("3_vavmc")
