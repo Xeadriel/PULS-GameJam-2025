@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj7u0134b2oje"]
+
+[ext_resource type="Script" uid="uid://boe3hwpj8ril3" path="res://Scripts/MinigamePopup.gd" id="1_ttwto"]
+
+[node name="MinigamePopup" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -190.5
+offset_right = 303.0
+offset_bottom = 190.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ttwto")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 5.5
+offset_right = 602.0
+offset_bottom = 36.5
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_onCloseButtonPressed"]
