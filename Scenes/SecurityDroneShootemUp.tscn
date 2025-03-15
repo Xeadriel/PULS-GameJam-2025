@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bj7u0134b2oje" path="res://Scenes/MinigamePopup.tscn" id="1_36kb0"]
 [ext_resource type="Texture2D" uid="uid://dxo485fd5tqef" path="res://Assets/BackgroundShootemUp.png" id="2_b2xle"]
 [ext_resource type="Texture2D" uid="uid://k2wxat2lnm45" path="res://Assets/TurretBarrel.png" id="3_2eomm"]
-[ext_resource type="Script" uid="uid://bqhlbdo0v6yy7" path="res://Scenes/ShootEmUp.gd" id="3_8ojpp"]
+[ext_resource type="Script" uid="uid://bqhlbdo0v6yy7" path="res://Scripts/ShootEmUp.gd" id="3_8ojpp"]
 [ext_resource type="Script" uid="uid://c7im8duuniiqd" path="res://Scripts/TurretBarrel.gd" id="3_b2xle"]
 [ext_resource type="PackedScene" uid="uid://cn6q3hmcx7due" path="res://Scenes/Bullet.tscn" id="4_2eomm"]
 [ext_resource type="PackedScene" uid="uid://bu6n1ur0rnt3c" path="res://Scenes/EnemyShip.tscn" id="4_5gx1a"]
