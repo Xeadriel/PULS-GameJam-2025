@@ -9,6 +9,9 @@ var shootTimer = 0
 @onready var barrelSprite = $TurretBarrelSprite
 @onready var barrelTip = $TurretBarrelSprite/Tip
 
+func _ready() -> void:
+	set_process(false)
+
 func _process(delta: float) -> void:
 	shootTimer += delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shootTimer >= SHOOTING_SPEED:

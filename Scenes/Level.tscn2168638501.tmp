@@ -18,9 +18,12 @@ tile_map_data = PackedByteArray("AAAAAAEAAgADAAEAAAABAAAAAgADAAEAAAAAAAIAAgADAAE
 z_index = 5
 position = Vector2(44, 39)
 
+[node name="JunkRobot" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8rbpu")]
+position = Vector2(1217, -495)
+player = NodePath("../Player")
+
 [node name="SecurityDronePatrol" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fuudy")]
-position = Vector2(684, -177)
-minDistance = 50.0
+position = Vector2(679, -173)
 player = NodePath("../Player")
 
 [node name="SecurityDroneShootemUp" parent="." instance=ExtResource("3_xylue")]
@@ -39,16 +42,13 @@ offset_bottom = -194.5
 [node name="MinigamePopup" parent="SecurityDroneShootemUp" index="0"]
 visible = false
 
+[node name="BackgroundShootemUp" parent="SecurityDroneShootemUp/MinigamePopup" index="1"]
+enemyShipCount = null
+spawnRate = null
+
 [node name="Enemies" type="Node2D" parent="SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" index="4"]
 
-[node name="JunkRobot" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8rbpu")]
-position = Vector2(1217, -493)
-minDistance = 50.0
-player = NodePath("../Player")
-
 [connection signal="interact" from="SecurityDronePatrol" to="SecurityDroneShootemUp/MinigamePopup" method="onMinigameStart"]
-[connection signal="closeWithSuccess" from="SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameSuccess"]
-[connection signal="closeWithoutSuccess" from="SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameFail"]
 [connection signal="closeWithoutSuccess" from="SecurityDroneShootemUp/MinigamePopup" to="SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="stopMinigame"]
 [connection signal="startMinigame" from="SecurityDroneShootemUp/MinigamePopup" to="SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="startMinigame"]
 

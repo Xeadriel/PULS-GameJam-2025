@@ -6,7 +6,9 @@ var isInteractible = false
 
 @onready var interactLabel = $InteractLabel
 @onready var destroyLabel = $DestroyLabel
+@onready var animatedSprite = $AnimatedSprite2D
 @export var player: Player = null
+
 
 signal interact
 signal destroy
@@ -16,7 +18,7 @@ func _ready() -> void:
 	destroyLabel.hide()
 	
 	interactLabel.text = "Press " + InputMap.action_get_events("interact")[0].as_text()[0] + " to interact"
-	destroyLabel.text = "Press " + InputMap.action_get_events("destroy")[0].as_text()[0] + " to destroy"
+	destroyLabel.text = "Press " + InputMap.action_get_events("destroy")[0].as_text()[0] + " to break it"
 
 func _process(delta: float) -> void:
 	var distance := global_position.distance_to(player.global_position)

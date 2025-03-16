@@ -43,8 +43,10 @@ scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_fy2qp")
 animation = &"evil"
 autoplay = "evil"
+frame_progress = 0.22294
 
 [node name="InteractLabel" type="Label" parent="."]
+z_index = 11
 offset_left = -124.0
 offset_top = -56.0
 offset_right = 210.0
@@ -54,6 +56,7 @@ text = "Press E to interact"
 label_settings = SubResource("LabelSettings_fy2qp")
 
 [node name="DestroyLabel" type="Label" parent="."]
+z_index = 11
 offset_left = -124.0
 offset_top = 26.0
 offset_right = 196.0
@@ -61,3 +64,23 @@ offset_bottom = 55.0
 scale = Vector2(0.8, 0.8)
 text = "Press B To Destroy"
 label_settings = SubResource("LabelSettings_fy2qp")
+
+[node name="SuccessLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -338.0
+offset_top = -29.0
+offset_right = -26.0
+offset_bottom = 21.0
+bbcode_enabled = true
+text = "[shake rate=20.0 level=5 connected=1]**SYSTEM RESTORED** Defense Drone Array D69-A thanks you, human.[/shake]"
+scroll_active = false
+
+[node name="FailLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 27.0
+offset_top = -27.0
+offset_right = 192.0
+offset_bottom = 23.0
+bbcode_enabled = true
+text = "[shake rate=20.0 level=5 connected=1]**SYSTEM ERROR** You shall not pass![/shake]"
+scroll_active = false
