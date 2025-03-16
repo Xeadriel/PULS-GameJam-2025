@@ -8,6 +8,7 @@ class_name TurretBarrel
 var shootTimer = 0
 @onready var barrelSprite = $TurretBarrelSprite
 @onready var barrelTip = $TurretBarrelSprite/Tip
+@onready var shotSound = $AudioStreamPlayer
 
 func _ready() -> void:
 	set_process(false)
@@ -31,3 +32,4 @@ func shoot(direction):
 	level.get_node("Bullets").add_child(newShot)
 	newShot.global_position = barrelTip.global_position
 	newShot.direction = direction
+	shotSound.play()

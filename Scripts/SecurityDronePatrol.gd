@@ -21,9 +21,6 @@ func _process(delta: float) -> void:
 			failLabelTimer = 0
 			failLabel.hide()
 
-func _physics_process(delta: float) -> void:
-	position = position.move_toward(oneTileToTheSide, delta*100)
-
 func onMinigameSuccess():
 	set_physics_process(true)
 	set_process(false)
@@ -35,3 +32,6 @@ func onMinigameSuccess():
 
 func onMinigameFail():
 	failLabel.show()
+
+func _on_destroy() -> void:
+	queue_free()

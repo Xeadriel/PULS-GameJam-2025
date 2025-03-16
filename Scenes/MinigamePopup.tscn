@@ -31,10 +31,10 @@ script = ExtResource("1_ttwto")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 552.0
-offset_top = 5.5
-offset_right = 602.0
-offset_bottom = 36.5
+offset_left = 538.0
+offset_top = 7.5
+offset_right = 598.0
+offset_bottom = 38.5
 text = "Close"
 
 [node name="EndPoint" type="Control" parent="."]

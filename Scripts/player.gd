@@ -7,6 +7,8 @@ class_name Player
 @onready var animatedSprite = $AnimatedSprite2D
 var lastVelY = 0
 
+var junkRobotDestroyed = false
+var securityRobotDestroyed = false
 
 func _physics_process(delta: float) -> void:
 	processInput(delta)
@@ -52,3 +54,10 @@ func onMinigameStart():
 
 func onMinigameEnd():
 	set_physics_process(true)
+
+func _onJunkRobotDestroy() -> void:
+	junkRobotDestroyed = true
+
+
+func _onSecurityDronePatrolDestroy() -> void:
+	securityRobotDestroyed = true

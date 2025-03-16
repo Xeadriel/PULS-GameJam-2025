@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc6gi6mmublqr"]
+[gd_scene load_steps=12 format=3 uid="uid://dc6gi6mmublqr"]
 
 [ext_resource type="Script" uid="uid://cwk640seyo60v" path="res://Scripts/SecurityDronePatrol.gd" id="1_miu0q"]
-[ext_resource type="Texture2D" uid="uid://7ooq5ed4osqp" path="res://Assets/SecurityDrones.png" id="2_miu0q"]
+[ext_resource type="Texture2D" uid="uid://7ooq5ed4osqp" path="res://Assets/SecurityBotAnims/SecurityDrones.png" id="2_miu0q"]
+[ext_resource type="Texture2D" uid="uid://bcxe7oc5csttk" path="res://Assets/SecurityBotAnims/SecurityDronesSlightlyUp.png" id="3_jt6gw"]
 [ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="3_miu0q"]
+[ext_resource type="Texture2D" uid="uid://bxiqpwjeeo4bx" path="res://Assets/SecurityBotAnims/SecurityDronesUp.png" id="4_a8h8w"]
+[ext_resource type="Texture2D" uid="uid://dlm5ixnhcl624" path="res://Assets/SecurityBotAnims/SecurityDronesGreen.png" id="5_nnp83"]
+[ext_resource type="Texture2D" uid="uid://bv7sf2n1ovsub" path="res://Assets/SecurityBotAnims/SecurityDronesGreenSlightlyUp.png" id="6_iy35q"]
+[ext_resource type="Texture2D" uid="uid://cff36de7kosn" path="res://Assets/SecurityBotAnims/SecurityDronesGreenUp.png" id="7_tt7n0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
 size = Vector2(40, 26)
@@ -12,15 +17,36 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_miu0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jt6gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a8h8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jt6gw")
 }],
 "loop": true,
 "name": &"evil",
-"speed": 5.0
+"speed": 1.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nnp83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iy35q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tt7n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iy35q")
+}],
 "loop": true,
 "name": &"good",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fy2qp"]
@@ -32,7 +58,6 @@ texture_filter = 1
 script = ExtResource("1_miu0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-top_level = true
 z_index = -1
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_h7xss")
@@ -43,7 +68,7 @@ scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_fy2qp")
 animation = &"evil"
 autoplay = "evil"
-frame_progress = 0.22294
+frame_progress = 0.800197
 
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 11
@@ -62,7 +87,7 @@ offset_top = 26.0
 offset_right = 196.0
 offset_bottom = 55.0
 scale = Vector2(0.8, 0.8)
-text = "Press B To Destroy"
+text = "Press B To Break it"
 label_settings = SubResource("LabelSettings_fy2qp")
 
 [node name="SuccessLabel" type="RichTextLabel" parent="."]
@@ -72,7 +97,7 @@ offset_top = -29.0
 offset_right = -26.0
 offset_bottom = 21.0
 bbcode_enabled = true
-text = "[shake rate=20.0 level=5 connected=1]**SYSTEM RESTORED** Defense Drone Array D69-A thanks you, human.[/shake]"
+text = "[center][shake rate=20.0 level=5 connected=1]**SYSTEM RESTORED** Defense Drone Array D69-A thanks you, human.[/shake]"
 scroll_active = false
 
 [node name="FailLabel" type="RichTextLabel" parent="."]
@@ -82,5 +107,5 @@ offset_top = -27.0
 offset_right = 192.0
 offset_bottom = 23.0
 bbcode_enabled = true
-text = "[shake rate=20.0 level=5 connected=1]**SYSTEM ERROR** You shall not pass![/shake]"
+text = "[center][shake rate=20.0 level=5 connected=1]**SYSTEM ERROR** You shall not pass![/shake]"
 scroll_active = false

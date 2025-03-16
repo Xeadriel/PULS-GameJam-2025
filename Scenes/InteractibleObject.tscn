@@ -34,7 +34,7 @@ offset_left = -155.0
 offset_top = 72.0
 offset_right = 165.0
 offset_bottom = 101.0
-text = "Press B To Destroy"
+text = "Press B To Break it"
 label_settings = SubResource("LabelSettings_j8x1u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

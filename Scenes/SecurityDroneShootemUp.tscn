@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dok1v5kmgg442"]
+[gd_scene load_steps=11 format=3 uid="uid://dok1v5kmgg442"]
 
 [ext_resource type="PackedScene" uid="uid://bj7u0134b2oje" path="res://Scenes/MinigamePopup.tscn" id="1_36kb0"]
 [ext_resource type="Texture2D" uid="uid://dxo485fd5tqef" path="res://Assets/BackgroundShootemUp.png" id="2_b2xle"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cn6q3hmcx7due" path="res://Scenes/Bullet.tscn" id="4_2eomm"]
 [ext_resource type="PackedScene" uid="uid://bu6n1ur0rnt3c" path="res://Scenes/EnemyShip.tscn" id="4_5gx1a"]
 [ext_resource type="Texture2D" uid="uid://cwvwqn5x2t4su" path="res://Assets/Turret.png" id="4_8ojpp"]
+[ext_resource type="AudioStream" uid="uid://bohhx565odmre" path="res://Assets/laserShot.wav" id="8_daxtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eomm"]
 size = Vector2(439.5, 298)
@@ -47,7 +48,7 @@ position = Vector2(420, 200)
 [node name="HPLabel" type="Label" parent="MinigamePopup/BackgroundShootemUp"]
 z_index = 2
 offset_left = -415.0
-offset_top = -9.0
+offset_top = -4.0
 offset_right = -350.0
 offset_bottom = 31.0
 text = "3 HP"
@@ -66,6 +67,9 @@ scale = Vector2(0.645985, 0.8)
 texture = ExtResource("3_2eomm")
 
 [node name="Tip" type="Node2D" parent="MinigamePopup/TurretBarrel/TurretBarrelSprite"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MinigamePopup/TurretBarrel"]
+stream = ExtResource("8_daxtp")
 
 [node name="Turret" type="Sprite2D" parent="MinigamePopup"]
 z_index = 1
