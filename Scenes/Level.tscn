@@ -84,7 +84,7 @@ player = NodePath("../Player")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapOutOfBoundsCollision"]
 position = Vector2(27, 271)
 build_mode = 1
-polygon = PackedVector2Array(-99, -155, -106, -33, -62, -9, 156, -18, 188, -36, 237, -33, 293, -55, 341, -49, 404, -85, 407, -217, 486, -257, 648, -241, 730, -282, 732, -378, 682, -418, 741, -452, 805, -419, 880, -449, 906, -438, 966, -470, 1063, -455, 1118, -483, 1097, -501, 1110, -552, 1185, -580, 1161, -602, 1313, -684, 1257, -715, 1351, -764, 1385, -752, 1451, -785, 1471, -770, 1593, -828, 1584, -872, 1544, -896, 1636, -945, 1576, -978, 1603, -994, 1501, -1000, 1384, -948, 1408, -928, 1323, -880, 1341, -859, 1260, -808, 1310, -784, 1225, -730, 1127, -786, 1000, -718, 951, -721, 910, -720, 834, -766, 807, -750, 771, -765, 722, -735, 731, -646, 681, -614, 708, -597, 652, -573, 671, -543, 617, -514, 697, -469, 647, -437, 579, -469, 423, -386, 281, -390, 222, -415, -36, -411, -87, -386, -66, -371, -184, -303, -200, -239, -211, -186, -154, -157)
+polygon = PackedVector2Array(-99, -155, -106, -33, -62, -9, 156, -18, 188, -36, 237, -33, 293, -55, 341, -49, 404, -85, 407, -217, 486, -257, 648, -241, 730, -282, 732, -378, 682, -418, 741, -452, 805, -419, 880, -449, 906, -438, 966, -470, 1063, -455, 1118, -483, 1097, -501, 1110, -552, 1185, -580, 1161, -602, 1313, -684, 1257, -715, 1351, -764, 1385, -752, 1451, -785, 1471, -770, 1593, -828, 1584, -872, 1544, -896, 1636, -945, 1730, -993, 1710, -1013, 2018, -1169, 2472, -1172, 2499, -1426, 2433, -1454, 1970, -1449, 1975, -1191, 1631, -1010, 1501, -1000, 1384, -948, 1408, -928, 1323, -880, 1341, -859, 1260, -808, 1310, -784, 1225, -730, 1127, -786, 1000, -718, 951, -721, 910, -720, 834, -766, 807, -750, 771, -765, 722, -735, 731, -646, 681, -614, 708, -597, 652, -573, 671, -543, 617, -514, 697, -469, 647, -437, 579, -469, 423, -386, 281, -390, 222, -415, -36, -411, -87, -386, -66, -371, -184, -303, -200, -239, -211, -186, -154, -157)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -54.0
@@ -107,8 +107,8 @@ parameters/looping = true
 [connection signal="closeWithSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameEnd"]
 [connection signal="closeWithSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameSuccess"]
 [connection signal="closeWithoutSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameEnd"]
-[connection signal="closeWithoutSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameFail"]
 [connection signal="closeWithoutSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="Player/SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="stopMinigame"]
+[connection signal="closeWithoutSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameFail"]
 [connection signal="startMinigame" from="Player/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameStart"]
 [connection signal="startMinigame" from="Player/SecurityDroneShootemUp/MinigamePopup" to="Player/SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="startMinigame"]
 [connection signal="closeWithSuccess" from="Player/NoContactMaze/MinigamePopup" to="Player" method="onMinigameEnd"]
