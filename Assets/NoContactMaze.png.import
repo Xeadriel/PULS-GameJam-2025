@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl8d1upxl05av"
-path="res://.godot/imported/pipeBeginning.png-dc6e63951a71bd6ca9774518fce54f1c.ctex"
+uid="uid://b5ujhilv7fmvj"
+path="res://.godot/imported/NoContactMaze.png-697291843e6f031f3ad014b0d7fcb896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pipeBeginning.png"
-dest_files=["res://.godot/imported/pipeBeginning.png-dc6e63951a71bd6ca9774518fce54f1c.ctex"]
+source_file="res://Assets/NoContactMaze.png"
+dest_files=["res://.godot/imported/NoContactMaze.png-697291843e6f031f3ad014b0d7fcb896.ctex"]
 
 [params]
 

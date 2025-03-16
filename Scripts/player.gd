@@ -47,3 +47,8 @@ func changeAnimation():
 		elif velocity.x > 0:
 			animatedSprite.flip_h = true
 	
+func onMinigameStart():
+	set_physics_process(false)
+
+func onMinigameEnd():
+	set_physics_process(true)

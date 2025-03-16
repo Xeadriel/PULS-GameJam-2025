@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b58r2v8u443ki"]
+
+[ext_resource type="PackedScene" uid="uid://bj7u0134b2oje" path="res://Scenes/MinigamePopup.tscn" id="1_yc7ug"]
+[ext_resource type="Texture2D" uid="uid://b5ujhilv7fmvj" path="res://Assets/NoContactMaze.png" id="2_e3oic"]
+[ext_resource type="Texture2D" uid="uid://fhvdgthhyaox" path="res://Assets/MazePlayer.png" id="3_2d7ly"]
+[ext_resource type="Script" uid="uid://bforyifu885dd" path="res://Scripts/NoContactMaze.gd" id="3_70e42"]
+[ext_resource type="Script" uid="uid://cswnoyvmpwu12" path="res://Scripts/MazePlayer.gd" id="4_bgyan"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_70e42"]
+radius = 2.0
+
+[node name="NoContactMaze" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -190.5
+offset_right = 303.0
+offset_bottom = 190.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinigamePopup" parent="." instance=ExtResource("1_yc7ug")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 606.0
+offset_bottom = 381.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="NoContactMaze" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(304, 204.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_e3oic")
+script = ExtResource("3_70e42")
+
+[node name="Area2D" type="Area2D" parent="NoContactMaze"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NoContactMaze/Area2D"]
+build_mode = 1
+polygon = PackedVector2Array(-304, -66, -168, -66, -166, -226, 24, -226, 24, 26, -222, 26, -224, 174, 338, 174, 338, 106, 208, 104, 208, 8, 358, 8, 358, -50, 90, -50, 90, -242, 480, -242, 480, -50, 398, -50, 398, 32, 234, 32, 234, 78, 398, 78, 398, 198, -274, 196, -274, -8, -16, -8, -16, -188, -118, -188, -118, -34, -304, -36, -304, 290, -512, 288, -512, -286, -304, -284)
+
+[node name="MazePlayer" type="CharacterBody2D" parent="NoContactMaze"]
+position = Vector2(-328, -50)
+script = ExtResource("4_bgyan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoContactMaze/MazePlayer"]
+shape = SubResource("CircleShape2D_70e42")
+
+[node name="Sprite2D" type="Sprite2D" parent="NoContactMaze/MazePlayer"]
+texture = ExtResource("3_2d7ly")
+
+[connection signal="body_entered" from="NoContactMaze/Area2D" to="NoContactMaze" method="onBodyEntered"]

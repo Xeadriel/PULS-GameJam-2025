@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl8d1upxl05av"
-path="res://.godot/imported/pipeBeginning.png-dc6e63951a71bd6ca9774518fce54f1c.ctex"
+uid="uid://ckyd1113fqxkw"
+path="res://.godot/imported/SecurityDronesGreen.png-2d01932d9740a579c810fc882055bcc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pipeBeginning.png"
-dest_files=["res://.godot/imported/pipeBeginning.png-dc6e63951a71bd6ca9774518fce54f1c.ctex"]
+source_file="res://Assets/SecurityDronesGreen.png"
+dest_files=["res://.godot/imported/SecurityDronesGreen.png-2d01932d9740a579c810fc882055bcc3.ctex"]
 
 [params]
 

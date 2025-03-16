@@ -12,6 +12,7 @@ font_size = 32
 
 [node name="InteractibleObject" type="StaticBody2D"]
 script = ExtResource("1_uw1m8")
+minDistance = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 top_level = true
@@ -19,7 +20,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_h7xss")
 
 [node name="InteractLabel" type="Label" parent="."]
-z_index = 6
+z_index = 11
 offset_left = -154.0
 offset_top = -98.0
 offset_right = 180.0
@@ -28,7 +29,7 @@ text = "Press E to interact"
 label_settings = SubResource("LabelSettings_j8x1u")
 
 [node name="DestroyLabel" type="Label" parent="."]
-z_index = 6
+z_index = 11
 offset_left = -155.0
 offset_top = 72.0
 offset_right = 165.0
