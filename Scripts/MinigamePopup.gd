@@ -8,6 +8,12 @@ signal closeWithoutSuccess
 signal closeWithSuccess
 signal startMinigame
 
+@onready var connected = []
+@onready var startPipe = $Start
+
+func _ready() -> void:
+	connected.append(startPipe)
+
 func onMinigameStart():
 	startMinigame.emit()
 	visible = true
@@ -23,3 +29,6 @@ func onMiniGameSuccess():
 func onMiniGameFail():
 	closeWithoutSuccess.emit()
 	visible = false
+
+func _on_control_2_is_won() -> void:
+	queue_free()

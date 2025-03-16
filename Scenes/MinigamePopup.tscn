@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj7u0134b2oje"]
+[gd_scene load_steps=11 format=3 uid="uid://bj7u0134b2oje"]
 
 [ext_resource type="Script" uid="uid://boe3hwpj8ril3" path="res://Scripts/MinigamePopup.gd" id="1_ttwto"]
+[ext_resource type="PackedScene" uid="uid://cvdgurbnitglq" path="res://Scenes/pipecontrol1.tscn" id="2_jk6fv"]
+[ext_resource type="PackedScene" uid="uid://bgpbxnxccphko" path="res://Scenes/pipecontrol2.tscn" id="3_543mt"]
+[ext_resource type="PackedScene" uid="uid://b1x0glagmxo08" path="res://Scenes/pipecontrol3.tscn" id="4_o76vo"]
+[ext_resource type="Texture2D" uid="uid://oiajhoe6jtrr" path="res://Assets/pipeBegnning.png" id="5_o76vo"]
+[ext_resource type="Script" uid="uid://bkw0sn0qhil81" path="res://Scripts/startPipe.gd" id="5_w34nr"]
+[ext_resource type="Texture2D" uid="uid://do1qb3b14q0el" path="res://Assets/pipeEnding.png" id="6_w34nr"]
+[ext_resource type="Script" uid="uid://bc8kwkmsu62nk" path="res://Scripts/endPipe.gd" id="7_38847"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38847"]
+size = Vector2(30, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o76vo"]
+size = Vector2(25, 11)
 
 [node name="MinigamePopup" type="Panel"]
 anchors_preset = 8
@@ -24,4 +37,122 @@ offset_right = 602.0
 offset_bottom = 36.5
 text = "Close"
 
+[node name="EndPoint" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 536.0
+offset_top = 325.5
+offset_right = 576.0
+offset_bottom = 365.5
+script = ExtResource("7_38847")
+
+[node name="End" type="Area2D" parent="EndPoint"]
+
+[node name="Sprite2D" type="Sprite2D" parent="EndPoint/End"]
+texture = ExtResource("6_w34nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint/End"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_38847")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 97.5
+offset_right = 568.0
+offset_bottom = 289.5
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="Control2" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control3" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control7" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control10" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control11" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control21" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control12" parent="GridContainer" instance=ExtResource("2_jk6fv")]
+layout_mode = 2
+
+[node name="Control13" parent="GridContainer" instance=ExtResource("2_jk6fv")]
+layout_mode = 2
+
+[node name="Control29" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control22" parent="GridContainer" instance=ExtResource("2_jk6fv")]
+layout_mode = 2
+
+[node name="Control23" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control24" parent="GridContainer" instance=ExtResource("2_jk6fv")]
+layout_mode = 2
+
+[node name="Control14" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control15" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control25" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control30" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control26" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control27" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control28" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control16" parent="GridContainer" instance=ExtResource("2_jk6fv")]
+layout_mode = 2
+
+[node name="Control17" parent="GridContainer" instance=ExtResource("2_jk6fv")]
+layout_mode = 2
+
+[node name="Control18" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="Control19" parent="GridContainer" instance=ExtResource("4_o76vo")]
+layout_mode = 2
+
+[node name="Control20" parent="GridContainer" instance=ExtResource("3_543mt")]
+layout_mode = 2
+
+[node name="StartPoint" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 88.0
+offset_top = 58.5
+offset_right = 88.0
+offset_bottom = 122.5
+script = ExtResource("5_w34nr")
+
+[node name="Start" type="Area2D" parent="StartPoint"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StartPoint/Start"]
+texture = ExtResource("5_o76vo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartPoint/Start"]
+position = Vector2(0.5, 34.5)
+shape = SubResource("RectangleShape2D_o76vo")
+
 [connection signal="pressed" from="Button" to="." method="_onCloseButtonPressed"]
+[connection signal="area_entered" from="StartPoint/Start" to="StartPoint" method="_on_start_area_entered"]

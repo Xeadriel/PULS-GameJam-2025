@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg28fagqh0gl6"]
+[gd_scene load_steps=5 format=3 uid="uid://b1x0glagmxo08"]
 
 [ext_resource type="Texture2D" uid="uid://ckd5250yv8tgh" path="res://Assets/pipe2.png" id="1_113un"]
-[ext_resource type="Script" uid="uid://cxwma55qat5vp" path="res://Scripts/pipecontrol_3.gd" id="2_rtool"]
+[ext_resource type="Script" uid="uid://h2snns605xxx" path="res://Scripts/pipecontrol_2.gd" id="2_113un"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_113un"]
 size = Vector2(10, 31)
@@ -18,9 +18,9 @@ offset_right = -1097.0
 offset_bottom = -593.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(27.5, 27.5)
+pivot_offset = Vector2(32, 32)
 texture_normal = ExtResource("1_113un")
-script = ExtResource("2_rtool")
+script = ExtResource("2_113un")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -30,7 +30,9 @@ shape = SubResource("RectangleShape2D_113un")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 texture_filter = 1
-position = Vector2(48.5, -0.5)
+position = Vector2(32.5, -0.5)
 shape = SubResource("RectangleShape2D_rpsqf")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
