@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh38s48feviqj"]
+[gd_scene load_steps=12 format=3 uid="uid://dh38s48feviqj"]
 
 [ext_resource type="Script" uid="uid://c5ax3j180kj8q" path="res://Scripts/JunkRobot.gd" id="1_lso7p"]
-[ext_resource type="Texture2D" uid="uid://ddj52lhk3fbdj" path="res://Assets/JunkRobotEvil.png" id="3_lso7p"]
-[ext_resource type="Texture2D" uid="uid://ui8georlkemi" path="res://Assets/JunkRobot.png" id="4_ahwre"]
+[ext_resource type="Texture2D" uid="uid://ddj52lhk3fbdj" path="res://Assets/JunkRobotAnims/JunkRobotEvil.png" id="3_lso7p"]
+[ext_resource type="Texture2D" uid="uid://caj1sblp0tiry" path="res://Assets/JunkRobotAnims/JunkRobotEvilSlightlyUp.png" id="3_mnlec"]
+[ext_resource type="Texture2D" uid="uid://ui8georlkemi" path="res://Assets/JunkRobotAnims/JunkRobot.png" id="4_ahwre"]
+[ext_resource type="Texture2D" uid="uid://csk88ndr8rgm5" path="res://Assets/JunkRobotAnims/JunkRobotEvilUp.png" id="4_c0mm7"]
 [ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="4_den6r"]
+[ext_resource type="Texture2D" uid="uid://d2abaa7nuctoe" path="res://Assets/JunkRobotAnims/JunkRobotSlightlyUp.png" id="6_msbxw"]
+[ext_resource type="Texture2D" uid="uid://70fuophpm4hv" path="res://Assets/JunkRobotAnims/JunkRobotUp.png" id="7_pncl7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
 size = Vector2(40, 44)
@@ -13,18 +17,36 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_lso7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mnlec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c0mm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mnlec")
 }],
 "loop": true,
 "name": &"evil",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_ahwre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_msbxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pncl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_msbxw")
 }],
 "loop": true,
 "name": &"good",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mnlec"]
@@ -36,13 +58,13 @@ texture_filter = 1
 script = ExtResource("1_lso7p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-top_level = true
 shape = SubResource("RectangleShape2D_h7xss")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y7qky")
 animation = &"evil"
 autoplay = "evil"
+frame_progress = 0.829969
 
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 6
@@ -61,7 +83,7 @@ offset_top = 26.0
 offset_right = 196.0
 offset_bottom = 55.0
 scale = Vector2(0.8, 0.8)
-text = "Press B To Destroy"
+text = "Press B To Break it"
 label_settings = SubResource("LabelSettings_mnlec")
 
 [node name="SuccessLabel" type="RichTextLabel" parent="."]
@@ -71,7 +93,7 @@ offset_top = -29.0
 offset_right = -26.0
 offset_bottom = 21.0
 bbcode_enabled = true
-text = "[shake rate=20.0 level=5 connected=1]**EXITING LOW POWER MODE** Maintenance coroutines restarted. I apologize for being in the way, operator.[/shake]"
+text = "[center][shake rate=20.0 level=5 connected=1]**EXITING LOW POWER MODE** Maintenance coroutines restarted. I apologize for being in the way, operator.[/shake]"
 scroll_active = false
 
 [node name="FailLabel" type="RichTextLabel" parent="."]
@@ -81,5 +103,5 @@ offset_top = -27.0
 offset_right = 309.0
 offset_bottom = 21.0
 bbcode_enabled = true
-text = "[shake rate=20.0 level=5 connected=1]**SLEEP ENGAGED** Restarting... **ERROR: LOW POWER**[/shake]"
+text = "[center][shake rate=20.0 level=5 connected=1]**SLEEP ENGAGED** Restarting... **ERROR: LOW POWER**[/shake]"
 scroll_active = false

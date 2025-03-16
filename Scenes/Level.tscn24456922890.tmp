@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=4 uid="uid://b0nqmgrawu5n2"]
+
+[ext_resource type="PackedScene" uid="uid://b5ecr4p2dx4jv" path="res://Scenes/TileMap.tscn" id="1_vsvp5"]
+[ext_resource type="PackedScene" uid="uid://biqww6fux2puo" path="res://Scenes/Player.tscn" id="2_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://dh38s48feviqj" path="res://Scenes/JunkRobot.tscn" id="3_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://dok1v5kmgg442" path="res://Scenes/SecurityDroneShootemUp.tscn" id="3_xylue"]
+[ext_resource type="PackedScene" uid="uid://dc6gi6mmublqr" path="res://Scenes/SecurityDronePatrol.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" uid="uid://b58r2v8u443ki" path="res://Scenes/NoContactMaze.tscn" id="6_tj5wv"]
+
+[node name="Level" type="Node2D"]
+texture_filter = 1
+
+[node name="TileMap" parent="." instance=ExtResource("1_vsvp5")]
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAcAAAAAAAEAAAABAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wMAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAQAAAAAAAEAAAAAAAMAAAAAAAAAAAACAAUAAAAAAAEAAAACAAYAAAAAAAEAAAABAAkAAAAAAAAAAAACAAgAAAAAAAAAAAACAAcAAAAAAAAAAAADAAYAAAAAAAEAAAACAAkAAAAAAAEAAAACAAoAAAAAAAAAAAADAAgAAAAAAAAAAAADAAcAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAIAAAAAAAEAAAAFAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAP//AAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAP//AAAAAAAAAAAFAAEAAAAAAAAAAAAGAP7/AAAAAAEAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAADAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAPv/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPn/AAAAAAAAAAAJAPv/AAAAAAAAAAAJAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAHAP3/AAAAAAEAAAAJAPn/AAAAAAAAAAAKAPr/AAAAAAAAAAAKAPj/AAAAAAAAAAAJAPj/AAAAAAAAAAALAPX/AAAAAAAAAAAMAPT/AAAAAAAAAAAMAPP/AAAAAAAAAAAMAPb/AAAAAAAAAAAMAPX/AAAAAAAAAAANAPT/AAAAAAAAAAANAPP/AAAAAAAAAAAOAPL/AAAAAAAAAAAOAPH/AAAAAAAAAAALAPT/AAAAAAAAAAALAPP/AAAAAAAAAAAMAPL/AAAAAAAAAAAMAPH/AAAAAAEAAAANAPL/AAAAAAAAAAANAPH/AAAAAAAAAAAOAPD/AAAAAAEAAAANAO//AAAAAAAAAAAOAO7/AAAAAAAAAAAOAO3/AAAAAAAAAAAPAOz/AAAAAAEAAAANAPD/AAAAAAAAAAAPAPD/AAAAAAAAAAAPAO//AAAAAAEAAAAQAO7/AAAAAAAAAAAQAO3/AAAAAAAAAAARAOz/AAAAAAAAAAARAOv/AAAAAAAAAAASAOr/AAAAAAAAAAASAOn/AAAAAAAAAAAOAO//AAAAAAAAAAAPAO7/AAAAAAAAAAAPAO3/AAAAAAAAAAAQAOz/AAAAAAAAAAAQAOv/AAAAAAEAAAARAOr/AAAAAAEAAAARAOn/AAAAAAAAAAASAOj/AAAAAAAAAAASAOf/AAAAAAAAAAATAOb/AAAAAAAAAAAPAOv/AAAAAAAAAAAQAOr/AAAAAAAAAAAQAOn/AAAAAAAAAAARAOj/AAAAAAAAAAARAOf/AAAAAAAAAAASAOb/AAAAAAAAAAATAOj/AAAAAAAAAAABAAsAAAABAAAAAAABAAoAAAABAAAAAAAAAAkAAAABAAEAAAAAAAgAAAABAAAAAAD//wcAAAABAAEAAAD//wYAAAABAAAAAAD+/wUAAAABAAAAAAALAPf/AAABAAAAAAAKAPX/AAABAAAAAAAWAOL/AAABAAAAAAAVAOD/AAABAAAAAAAVAOH/AAAAAAAAAAAWAOD/AAAAAAAAAAAWAN//AAAAAAAAAAAVAN//AAAAAAAAAAAWAN7/AAAAAAAAAAAWAN3/AAAAAAAAAAAXANz/AAAAAAAAAAAWAOH/AAAAAAAAAAAXAOD/AAAAAAAAAAAXAN//AAAAAAAAAAAXAN7/AAAAAAAAAAAXAN3/AAAAAAAAAAAYANz/AAAAAAAAAAAYAN7/AAAAAAAAAAAYAN3/AAAAAAAAAAAXANv/AAAAAAAAAAACAAsAAAACAAAAAAADAAoAAAACAAAAAAADAAkAAAACAAAAAAAEAAgAAAACAAAAAAAEAAcAAAACAAEAAAAFAAYAAAACAAEAAAAFAAUAAAACAAAAAAAGAAQAAAACAAAAAAAGAAMAAAACAAAAAAAHAAIAAAACAAAAAAAHAAEAAAACAAAAAAAIAAAAAAACAAAAAAAIAP//AAACAAEAAAAJAP7/AAACAAAAAAAJAP3/AAACAAAAAAAKAPz/AAACAAAAAAAKAPv/AAACAAAAAAAMAPf/AAACAAAAAAANAPb/AAACAAAAAAANAPX/AAACAAAAAAAOAPT/AAACAAEAAAAOAPP/AAACAAAAAAAPAPL/AAACAAAAAAAPAPH/AAACAAAAAAAQAPD/AAACAAAAAAAQAO//AAACAAAAAAARAO7/AAACAAAAAAARAO3/AAACAAAAAAASAOz/AAACAAAAAAASAOv/AAACAAEAAAATAOr/AAACAAAAAAATAOn/AAACAAAAAAAXAOL/AAACAAAAAAAXAOH/AAACAAEAAAAYAOD/AAACAAEAAAAYAN//AAACAAAAAAAZAN7/AAACAAEAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAAEAAAAAAADAAAAAAAEAP//AAADAAEAAAAFAP7/AAADAAEAAAAFAP3/AAADAAAAAAAGAPz/AAADAAAAAAAGAPv/AAADAAAAAAAHAPr/AAADAAAAAAAHAPn/AAADAAAAAAAIAPj/AAADAAAAAAAIAPf/AAADAAAAAAD+/wMAAAADAAEAAAD//wIAAAADAAAAAAD//wEAAAADAAAAAAAAAAAAAAADAAAAAAAKAPP/AAADAAAAAAALAPL/AAADAAAAAAALAPH/AAADAAAAAAAMAPD/AAADAAAAAAAMAO//AAADAAAAAAANAO7/AAADAAAAAAANAO3/AAADAAAAAAAOAOz/AAADAAAAAAAOAOv/AAADAAAAAAAPAOr/AAADAAAAAAAPAOn/AAADAAAAAAAQAOj/AAADAAAAAAAQAOf/AAADAAAAAAARAOb/AAADAAAAAAARAOX/AAADAAAAAAAUAN//AAAIAAAAAAAVAN7/AAADAAAAAAAVAN3/AAADAAAAAAAWANz/AAADAAAAAAAWANv/AAADAAAAAAAXANr/AAADAAAAAAACAAIAAAAEAAAAAAABAAEAAAAEAAAAAAABAAAAAAAEAAAAAAAKAPn/AAAEAAAAAAAJAPf/AAAEAAAAAAATAOf/AAAEAAAAAAASAOX/AAAEAAAAAAAZANz/AAAEAAAAAAAYANv/AAAEAAAAAAAYANr/AAAEAAAAAAACAAwAAAAFAAAAAAAMAPj/AAAFAAAAAAAWAOP/AAAFAAAAAAAZAN3/AAAGAAAAAAAUAOj/AAAGAAAAAAALAPr/AAAGAAAAAAAXANn/AAAHAAAAAAASAOT/AAAHAAAAAAAJAPb/AAAHAAAAAAACAAMAAAAAAAAAAAAAAP//AAAHAAAAAAD+/wQAAAAIAAAAAAAKAPT/AAAIAAAAAAAKAPf/AAAKAAEAAAALAPb/AAAAAAAAAAATAOX/AAAKAAAAAAAUAOP/AAAKAAAAAAAVAOL/AAAKAAAAAAAUAOT/AAAKAAEAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_8rbpu")]
+z_index = 5
+position = Vector2(44, 39)
+SPEED = 200.0
+
+[node name="SecurityDronePatrol" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fuudy")]
+position = Vector2(680, -157)
+minDistance = 50.0
+player = NodePath("../Player")
+
+[node name="SecurityDroneShootemUp" parent="SecurityDronePatrol" instance=ExtResource("3_xylue")]
+z_index = 11
+layout_direction = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -37.5
+offset_right = -20.0
+offset_bottom = -37.5
+
+[node name="MinigamePopup" parent="SecurityDronePatrol/SecurityDroneShootemUp" index="0"]
+visible = false
+
+[node name="Enemies" type="Node2D" parent="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" index="4"]
+
+[node name="JunkRobot" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8rbpu")]
+position = Vector2(1251, -465)
+minDistance = 50.0
+player = NodePath("../Player")
+
+[node name="NoContactMaze" parent="JunkRobot" instance=ExtResource("6_tj5wv")]
+z_index = 15
+
+[node name="MinigamePopup" parent="JunkRobot/NoContactMaze" index="0"]
+visible = false
+
+[connection signal="destroy" from="SecurityDronePatrol" to="Player" method="_onSecurityDronePatrolDestroy"]
+[connection signal="destroy" from="SecurityDronePatrol" to="SecurityDronePatrol" method="_on_destroy"]
+[connection signal="interact" from="SecurityDronePatrol" to="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" method="onMinigameStart"]
+[connection signal="closeWithSuccess" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameEnd"]
+[connection signal="closeWithSuccess" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameSuccess"]
+[connection signal="closeWithoutSuccess" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameEnd"]
+[connection signal="closeWithoutSuccess" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameFail"]
+[connection signal="closeWithoutSuccess" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="stopMinigame"]
+[connection signal="startMinigame" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameStart"]
+[connection signal="startMinigame" from="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="startMinigame"]
+[connection signal="destroy" from="JunkRobot" to="Player" method="_onJunkRobotDestroy"]
+[connection signal="destroy" from="JunkRobot" to="JunkRobot" method="_on_destroy"]
+[connection signal="interact" from="JunkRobot" to="Player" method="onMinigameStart"]
+[connection signal="interact" from="JunkRobot" to="JunkRobot/NoContactMaze/MinigamePopup" method="onMinigameStart"]
+[connection signal="closeWithSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="Player" method="onMinigameEnd"]
+[connection signal="closeWithSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="JunkRobot" method="onMinigameSuccess"]
+[connection signal="closeWithoutSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="Player" method="onMinigameEnd"]
+[connection signal="closeWithoutSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="JunkRobot" method="onMinigameFail"]
+
+[editable path="SecurityDronePatrol/SecurityDroneShootemUp"]
+[editable path="SecurityDronePatrol/SecurityDroneShootemUp/MinigamePopup"]
+[editable path="JunkRobot/NoContactMaze"]

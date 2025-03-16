@@ -1,16 +1,16 @@
 [gd_scene load_steps=10 format=3 uid="uid://biqww6fux2puo"]
 
 [ext_resource type="Script" uid="uid://b1yeay7yarjwc" path="res://Scripts/Player.gd" id="1_rpqav"]
-[ext_resource type="Texture2D" uid="uid://bq0euf0sywqlg" path="res://Assets/Player Anims/PlayerBack.png" id="2_gntrk"]
-[ext_resource type="Texture2D" uid="uid://c1gyykjmdsimd" path="res://Assets/Player Anims/Player.png" id="2_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://1hd7ct8jrcf8" path="res://Assets/Player Anims/PlayerBackSlightlyUp.png" id="3_52ee3"]
-[ext_resource type="Texture2D" uid="uid://jdqwv267n8w0" path="res://Assets/Player Anims/PlayerSlightlyUp.png" id="4_5ixxa"]
-[ext_resource type="Texture2D" uid="uid://b677qg28h1ot4" path="res://Assets/Player Anims/PlayerBackUp.png" id="4_bhhdu"]
-[ext_resource type="Texture2D" uid="uid://cel5wf05cqvk" path="res://Assets/Player Anims/PlayerUp.png" id="5_nn08x"]
+[ext_resource type="Texture2D" uid="uid://bq0euf0sywqlg" path="res://Assets/PlayerAnims/PlayerBack.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://c1gyykjmdsimd" path="res://Assets/PlayerAnims/Player.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://1hd7ct8jrcf8" path="res://Assets/PlayerAnims/PlayerBackSlightlyUp.png" id="3_52ee3"]
+[ext_resource type="Texture2D" uid="uid://jdqwv267n8w0" path="res://Assets/PlayerAnims/PlayerSlightlyUp.png" id="4_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://b677qg28h1ot4" path="res://Assets/PlayerAnims/PlayerBackUp.png" id="4_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://cel5wf05cqvk" path="res://Assets/PlayerAnims/PlayerUp.png" id="5_nn08x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
-radius = 12.0
-height = 24.0
+radius = 7.0
+height = 14.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
 animations = [{
@@ -29,7 +29,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -46,7 +46,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -58,8 +58,10 @@ shape = SubResource("CapsuleShape2D_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_dewec")
 animation = &"front"
 autoplay = "front"
+frame_progress = 0.14475
 
 [node name="Camera2D" type="Camera2D" parent="."]

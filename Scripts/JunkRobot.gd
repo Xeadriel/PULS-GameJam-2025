@@ -35,3 +35,7 @@ func onMinigameSuccess():
 
 func onMinigameFail():
 	failLabel.show()
+
+
+func _on_destroy() -> void:
+	queue_free()
