@@ -1,6 +1,9 @@
 extends Panel
 class_name MiniGamePopup
 
+var chosenBlock = null
+
+
 signal closeWithoutSuccess
 signal closeWithSuccess
 

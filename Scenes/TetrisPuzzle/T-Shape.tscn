@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://da08rw1i0eia7"]
+
+[ext_resource type="Texture2D" uid="uid://1o8hrbxn8h4f" path="res://icon.svg" id="1_0snrm"]
+[ext_resource type="Script" uid="uid://tk4b24g5gtmq" path="res://Scripts/pieces.gd" id="1_6ondu"]
+
+[node name="T-Shape" type="CharacterBody2D"]
+rotation = 3.14159
+scale = Vector2(2, 2)
+script = ExtResource("1_6ondu")
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(8.8432e-08, 8)
+scale = Vector2(0.326283, 1)
+
+[node name="Marker2D2" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(-0.0507614, -8)
+scale = Vector2(0.323163, 1)
+
+[node name="Marker2D3" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(-16, -8)
+scale = Vector2(0.335854, 1)
+
+[node name="Marker2D4" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(16, -8)
+scale = Vector2(1, 0.498716)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -8)
+polygon = PackedVector2Array(-8, 24, 8, 24, 8, 8, 24, 8, 24, -8, -24, -8, -24, 8, -8, 8)
+
+[node name="SnapPoints" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-0.176403, 8)
+scale = Vector2(0.122356, 0.125)
+texture = ExtResource("1_0snrm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-0.0507612, -8)
+scale = Vector2(0.121186, 0.125)
+texture = ExtResource("1_0snrm")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-15.9395, -8)
+scale = Vector2(0.125945, 0.125)
+texture = ExtResource("1_0snrm")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(16, -8)
+scale = Vector2(0.125, 0.124679)
+texture = ExtResource("1_0snrm")

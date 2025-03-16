@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://14h6p34up6b7"]
+
+[ext_resource type="Script" uid="uid://tk4b24g5gtmq" path="res://Scripts/pieces.gd" id="1_5r7eh"]
+[ext_resource type="Texture2D" uid="uid://1o8hrbxn8h4f" path="res://icon.svg" id="1_ax275"]
+
+[node name="S-shape" type="CharacterBody2D"]
+script = ExtResource("1_5r7eh")
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(56, -32)
+
+[node name="Marker2D2" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(56, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(24, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="." groups=["PieceMarkers"]]
+position = Vector2(24, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(72, -48, 72, 16, 40, 16, 40, 48, 8, 48, 8, -16, 40, -16, 40, -48)
+
+[node name="SnapPoints" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(0.988235, 0.988235, 0, 1)
+self_modulate = Color(0.988235, 0.988235, 0, 1)
+position = Vector2(56, -32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ax275")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(0.988235, 0.988235, 0, 1)
+self_modulate = Color(0.988235, 0.988235, 0, 1)
+position = Vector2(56, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ax275")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(0.988235, 0.988235, 0, 1)
+self_modulate = Color(0.988235, 0.988235, 0, 1)
+position = Vector2(24, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ax275")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SnapPoints"]
+modulate = Color(0.988235, 0.988235, 0, 1)
+self_modulate = Color(0.988235, 0.988235, 0, 1)
+position = Vector2(24, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ax275")

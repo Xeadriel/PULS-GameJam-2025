@@ -1,0 +1,182 @@
+[gd_scene load_steps=14 format=4 uid="uid://by02w121lrhq0"]
+
+[ext_resource type="PackedScene" uid="uid://bj7u0134b2oje" path="res://Scenes/MinigamePopup.tscn" id="1_5laev"]
+[ext_resource type="PackedScene" uid="uid://b8aes3yuvtf5s" path="res://Scenes/TetrisPuzzle/box_shape.tscn" id="3_e5ewx"]
+[ext_resource type="Script" uid="uid://cplgkm65rn5g0" path="res://Scripts/PuzzleSnapPos.gd" id="3_kwwsp"]
+[ext_resource type="PackedScene" uid="uid://c6exlrvd7f0w1" path="res://Scenes/TetrisPuzzle/L-Shape.tscn" id="4_7nwep"]
+[ext_resource type="PackedScene" uid="uid://ll2nidxr5jo" path="res://Scenes/TetrisPuzzle/TetrisPuzzleBorder.tscn" id="4_q36rs"]
+[ext_resource type="PackedScene" uid="uid://l43mnxo3dixi" path="res://Scenes/TetrisPuzzle/S-Shape.tscn" id="5_5jh4a"]
+[ext_resource type="PackedScene" uid="uid://qhkvd1nk8b02" path="res://Scenes/TetrisPuzzle/L-ShapeFlipped.tscn" id="5_kwwsp"]
+[ext_resource type="PackedScene" uid="uid://da08rw1i0eia7" path="res://Scenes/TetrisPuzzle/T-Shape.tscn" id="6_avjeu"]
+[ext_resource type="Texture2D" uid="uid://1o8hrbxn8h4f" path="res://icon.svg" id="7_7nwep"]
+[ext_resource type="PackedScene" uid="uid://bnu45mmayk6p" path="res://Scenes/TetrisPuzzle/I_shape.tscn" id="8_5jh4a"]
+[ext_resource type="PackedScene" uid="uid://14h6p34up6b7" path="res://Scenes/TetrisPuzzle/S-ShapeFlipped.tscn" id="8_cxqlp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nwep"]
+texture = ExtResource("7_7nwep")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5jh4a"]
+sources/0 = SubResource("TileSetAtlasSource_7nwep")
+
+[node name="Tetris puzzle" instance=ExtResource("1_5laev")]
+offset_left = -310.0
+offset_top = -208.0
+offset_right = 296.0
+offset_bottom = 173.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="1"]
+position = Vector2(-114, 7)
+scale = Vector2(1.2, 1.2)
+tile_map_data = PackedByteArray("AAAIAA4AAAABAAEAAAAIAA8AAAABAAEAAAAIABAAAAABAAEAAAAIABEAAAABAAEAAAAJAA4AAAABAAEAAAAJAA8AAAABAAEAAAAJABAAAAABAAEAAAAJABEAAAABAAEAAAAKAA4AAAABAAEAAAAKAA8AAAABAAEAAAAKABAAAAABAAEAAAAKABEAAAABAAEAAAALAA4AAAABAAEAAAALAA8AAAABAAEAAAALABAAAAABAAEAAAALABEAAAABAAEAAAAMAA4AAAABAAEAAAAMAA8AAAABAAEAAAAMABAAAAABAAEAAAAMABEAAAABAAEAAAANAA4AAAABAAEAAAANAA8AAAABAAEAAAANABAAAAABAAEAAAANABEAAAABAAEAAAAOAA4AAAABAAEAAAAOAA8AAAABAAEAAAAOABAAAAABAAEAAAAOABEAAAABAAEAAAAPAA4AAAABAAEAAAAPAA8AAAABAAEAAAAPABAAAAABAAEAAAAPABEAAAABAAEAAAAQAA4AAAABAAEAAAAQAA8AAAABAAEAAAAQABAAAAABAAEAAAAQABEAAAABAAEAAAARAA4AAAABAAEAAAARAA8AAAABAAEAAAARABAAAAABAAEAAAARABEAAAABAAEAAAASAA4AAAABAAEAAAASAA8AAAABAAEAAAASABAAAAABAAEAAAASABEAAAABAAEAAAATAA4AAAABAAEAAAATAA8AAAABAAEAAAATABAAAAABAAEAAAATABEAAAABAAEAAAAUAA4AAAABAAEAAAAUAA8AAAABAAEAAAAUABAAAAABAAEAAAAUABEAAAABAAEAAAAVAA4AAAABAAEAAAAVAA8AAAABAAEAAAAVABAAAAABAAEAAAAVABEAAAABAAEAAAAWAA4AAAABAAEAAAAWAA8AAAABAAEAAAAWABAAAAABAAEAAAAWABEAAAABAAEAAAAXAA4AAAABAAEAAAAXAA8AAAABAAEAAAAXABAAAAABAAEAAAAXABEAAAABAAEAAAAIAAwAAAABAAEAAAAIAA0AAAABAAEAAAAJAAwAAAABAAEAAAAJAA0AAAABAAEAAAAKAAwAAAABAAEAAAAKAA0AAAABAAEAAAALAAwAAAABAAEAAAALAA0AAAABAAEAAAAMAAwAAAABAAEAAAAMAA0AAAABAAEAAAANAAwAAAABAAEAAAANAA0AAAABAAEAAAAOAAwAAAABAAEAAAAOAA0AAAABAAEAAAAPAAwAAAABAAEAAAAPAA0AAAABAAEAAAAQAAwAAAABAAEAAAAQAA0AAAABAAEAAAARAAwAAAABAAEAAAARAA0AAAABAAEAAAASAAwAAAABAAEAAAASAA0AAAABAAEAAAATAAwAAAABAAEAAAATAA0AAAABAAEAAAAUAAwAAAABAAEAAAAUAA0AAAABAAEAAAAVAAwAAAABAAEAAAAVAA0AAAABAAEAAAAWAAwAAAABAAEAAAAWAA0AAAABAAEAAAAXAAwAAAABAAEAAAAXAA0AAAABAAEAAAAIAAoAAAABAAEAAAAIAAsAAAABAAEAAAAJAAoAAAABAAEAAAAJAAsAAAABAAEAAAAKAAoAAAABAAEAAAAKAAsAAAABAAEAAAALAAoAAAABAAEAAAALAAsAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAAOAAoAAAABAAEAAAAOAAsAAAABAAEAAAAPAAoAAAABAAEAAAAPAAsAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAARAAoAAAABAAEAAAARAAsAAAABAAEAAAASAAoAAAABAAEAAAASAAsAAAABAAEAAAATAAoAAAABAAEAAAATAAsAAAABAAEAAAAUAAoAAAABAAEAAAAUAAsAAAABAAEAAAAVAAoAAAABAAEAAAAVAAsAAAABAAEAAAAWAAoAAAABAAEAAAAWAAsAAAABAAEAAAAXAAoAAAABAAEAAAAXAAsAAAABAAEAAAAIAAgAAAABAAEAAAAIAAkAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAKAAgAAAABAAEAAAAKAAkAAAABAAEAAAALAAgAAAABAAEAAAALAAkAAAABAAEAAAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAAOAAgAAAABAAEAAAAOAAkAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAQAAgAAAABAAEAAAAQAAkAAAABAAEAAAARAAgAAAABAAEAAAARAAkAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAATAAgAAAABAAEAAAATAAkAAAABAAEAAAAUAAgAAAABAAEAAAAUAAkAAAABAAEAAAAVAAgAAAABAAEAAAAVAAkAAAABAAEAAAAWAAgAAAABAAEAAAAWAAkAAAABAAEAAAAXAAgAAAABAAEAAAAXAAkAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAKAAYAAAABAAEAAAAKAAcAAAABAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAABAAEAAAANAAYAAAABAAEAAAANAAcAAAABAAEAAAAOAAYAAAABAAEAAAAOAAcAAAABAAEAAAAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAQAAYAAAABAAEAAAAQAAcAAAABAAEAAAARAAYAAAABAAEAAAARAAcAAAABAAEAAAASAAYAAAABAAEAAAASAAcAAAABAAEAAAATAAYAAAABAAEAAAATAAcAAAABAAEAAAAUAAYAAAABAAEAAAAUAAcAAAABAAEAAAAVAAYAAAABAAEAAAAVAAcAAAABAAEAAAAWAAYAAAABAAEAAAAWAAcAAAABAAEAAAAXAAYAAAABAAEAAAAXAAcAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAANAAQAAAABAAEAAAANAAUAAAABAAEAAAAOAAQAAAABAAEAAAAOAAUAAAABAAEAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAQAAQAAAABAAEAAAAQAAUAAAABAAEAAAARAAQAAAABAAEAAAARAAUAAAABAAEAAAASAAQAAAABAAEAAAASAAUAAAABAAEAAAATAAQAAAABAAEAAAATAAUAAAABAAEAAAAUAAQAAAABAAEAAAAUAAUAAAABAAEAAAAVAAQAAAABAAEAAAAVAAUAAAABAAEAAAAWAAQAAAABAAEAAAAWAAUAAAABAAEAAAAXAAQAAAABAAEAAAAXAAUAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_5jh4a")
+
+[node name="SnapPoints" type="Node2D" parent="TileMapLayer" index="0"]
+
+[node name="Marker2D" type="Marker2D" parent="TileMapLayer/SnapPoints" index="0"]
+position = Vector2(354.167, 75)
+script = ExtResource("3_kwwsp")
+
+[node name="Marker2D2" type="Marker2D" parent="TileMapLayer/SnapPoints" index="1"]
+position = Vector2(355, 88.3333)
+script = ExtResource("3_kwwsp")
+
+[node name="Borders" type="Node2D" parent="TileMapLayer" index="1"]
+
+[node name="Border" parent="TileMapLayer/Borders" index="0" instance=ExtResource("4_q36rs")]
+position = Vector2(260, 51.6667)
+
+[node name="Pieces" type="Node2D" parent="." index="2"]
+position = Vector2(-178.8, -30.2)
+scale = Vector2(1.2, 1.2)
+
+[node name="Boxes" type="Node2D" parent="Pieces" index="0"]
+position = Vector2(-50, 31)
+
+[node name="Box-Shape" parent="Pieces/Boxes" index="0" instance=ExtResource("3_e5ewx")]
+position = Vector2(620.667, 235.833)
+collision_layer = 2
+collision_mask = 3
+startPos = Vector2(624, 288)
+
+[node name="Box-Shape2" parent="Pieces/Boxes" index="1" instance=ExtResource("3_e5ewx")]
+position = Vector2(328, 256)
+
+[node name="Box-Shape3" parent="Pieces/Boxes" index="2" instance=ExtResource("3_e5ewx")]
+position = Vector2(392, 256)
+
+[node name="Box-Shape4" parent="Pieces/Boxes" index="3" instance=ExtResource("3_e5ewx")]
+position = Vector2(456, 256)
+
+[node name="L" type="Node2D" parent="Pieces" index="1"]
+position = Vector2(-122, -105)
+
+[node name="L-Shape2" parent="Pieces/L" index="0" instance=ExtResource("4_7nwep")]
+position = Vector2(528, 360)
+rotation = 3.14159
+
+[node name="L-Shape" parent="Pieces/L" index="1" instance=ExtResource("5_kwwsp")]
+position = Vector2(336, 136)
+
+[node name="S" type="Node2D" parent="Pieces" index="2"]
+position = Vector2(102, -81)
+
+[node name="S-shape" parent="Pieces/S" index="0" instance=ExtResource("5_5jh4a")]
+position = Vector2(296, 288)
+
+[node name="S-shape2" parent="Pieces/S" index="1" instance=ExtResource("8_cxqlp")]
+position = Vector2(72, 288)
+
+[node name="T" type="Node2D" parent="Pieces" index="3"]
+
+[node name="T-Shape" parent="Pieces/T" index="0" instance=ExtResource("6_avjeu")]
+position = Vector2(262, 223)
+
+[node name="T-Shape2" parent="Pieces/T" index="1" instance=ExtResource("6_avjeu")]
+position = Vector2(358, 223)
+
+[node name="T-Shape3" parent="Pieces/T" index="2" instance=ExtResource("6_avjeu")]
+position = Vector2(278, 175)
+rotation = 1.5708
+
+[node name="T-Shape4" parent="Pieces/T" index="3" instance=ExtResource("6_avjeu")]
+position = Vector2(342, 175)
+rotation = -1.5708
+
+[node name="I" type="Node2D" parent="Pieces" index="4"]
+position = Vector2(598, -313)
+rotation = 1.5708
+
+[node name="IShape" parent="Pieces/I" index="0" instance=ExtResource("8_5jh4a")]
+position = Vector2(424, 240)
+
+[node name="IShape2" parent="Pieces/I" index="1" instance=ExtResource("8_5jh4a")]
+position = Vector2(424, 368)
+
+[connection signal="attach" from="TileMapLayer/SnapPoints/Marker2D" to="Pieces/Boxes/Box-Shape" method="_on_marker_2d_attach"]
+[connection signal="attach" from="TileMapLayer/SnapPoints/Marker2D2" to="Pieces/Boxes/Box-Shape" method="_on_marker_2d_attach"]
+[connection signal="body_entered" from="TileMapLayer/Borders/Border" to="Pieces/Boxes/Box-Shape" method="_on_border_body_entered"]
+[connection signal="pieceDrop" from="Pieces/Boxes/Box-Shape" to="TileMapLayer/SnapPoints/Marker2D" method="_on_box_shape_piece_drop"]
