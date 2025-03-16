@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		failLabelTimer += delta
 		if failLabelTimer >= failLabelTimeOut:
 			failLabelTimer = 0
-			failLabel.visible = false
+			failLabel.hide()
 
 func _physics_process(delta: float) -> void:
 	position = position.move_toward(oneTileToTheSide, delta*100)

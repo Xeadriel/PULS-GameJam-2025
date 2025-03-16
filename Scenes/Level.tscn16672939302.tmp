@@ -48,7 +48,6 @@ minDistance = 50.0
 player = NodePath("../Player")
 
 [node name="NoContactMaze" parent="JunkRobot" instance=ExtResource("6_tj5wv")]
-z_index = 15
 
 [node name="MinigamePopup" parent="JunkRobot/NoContactMaze" index="0"]
 visible = false
@@ -61,11 +60,8 @@ visible = false
 [connection signal="closeWithoutSuccess" from="SecurityDroneShootemUp/MinigamePopup" to="SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="stopMinigame"]
 [connection signal="startMinigame" from="SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameStart"]
 [connection signal="startMinigame" from="SecurityDroneShootemUp/MinigamePopup" to="SecurityDroneShootemUp/MinigamePopup/BackgroundShootemUp" method="startMinigame"]
-[connection signal="interact" from="JunkRobot" to="Player" method="onMinigameStart"]
 [connection signal="interact" from="JunkRobot" to="JunkRobot/NoContactMaze/MinigamePopup" method="onMinigameStart"]
-[connection signal="closeWithSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="Player" method="onMinigameEnd"]
 [connection signal="closeWithSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="JunkRobot" method="onMinigameSuccess"]
-[connection signal="closeWithoutSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="Player" method="onMinigameEnd"]
 [connection signal="closeWithoutSuccess" from="JunkRobot/NoContactMaze/MinigamePopup" to="JunkRobot" method="onMinigameFail"]
 
 [editable path="SecurityDroneShootemUp"]
