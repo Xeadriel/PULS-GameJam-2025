@@ -1,18 +1,1727 @@
-[gd_scene load_steps=11 format=4 uid="uid://b0nqmgrawu5n2"]
+[gd_scene load_steps=16 format=4 uid="uid://b3e4scwk3dsic"]
 
+[ext_resource type="Texture2D" uid="uid://bkrtp8aulfsi5" path="res://Assets/BackgroundSky.png" id="1_b10nm"]
 [ext_resource type="PackedScene" uid="uid://b5ecr4p2dx4jv" path="res://Scenes/TileMap.tscn" id="1_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://biqww6fux2puo" path="res://Scenes/Player.tscn" id="2_8rbpu"]
-[ext_resource type="PackedScene" uid="uid://dh38s48feviqj" path="res://Scenes/JunkRobot.tscn" id="3_8rbpu"]
-[ext_resource type="PackedScene" uid="uid://dok1v5kmgg442" path="res://Scenes/SecurityDroneShootemUp.tscn" id="3_xylue"]
-[ext_resource type="PackedScene" uid="uid://dc6gi6mmublqr" path="res://Scenes/SecurityDronePatrol.tscn" id="4_fuudy"]
-[ext_resource type="PackedScene" uid="uid://b58r2v8u443ki" path="res://Scenes/NoContactMaze.tscn" id="6_tj5wv"]
+[ext_resource type="Texture2D" uid="uid://cey4nh8uehone" path="res://Assets/BackgroundOptionOne.png" id="2_fhlu0"]
+[ext_resource type="PackedScene" path="res://Scenes/JunkRobot.tscn" id="3_8rbpu"]
+[ext_resource type="PackedScene" path="res://Scenes/SecurityDroneShootemUp.tscn" id="3_xylue"]
+[ext_resource type="PackedScene" path="res://Scenes/SecurityDronePatrol.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" path="res://Scenes/NoContactMaze.tscn" id="6_tj5wv"]
 [ext_resource type="Theme" uid="uid://jw3060yv5m2u" path="res://Theme.tres" id="7_5rrr5"]
-[ext_resource type="Script" uid="uid://c6n1oe0ku4rk2" path="res://Scripts/DisappearAfterXSecsScript.gd" id="7_ienac"]
+[ext_resource type="Script" path="res://Scripts/DisappearAfterXSecsScript.gd" id="7_ienac"]
 [ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="8_or7tv"]
 [ext_resource type="AudioStream" uid="uid://cbv8buooer51j" path="res://Assets/Sci-Fi Synthwave __ Chrome - Music inspired by 80s & 90s sci-fi movies - Royalty Free Music.mp3" id="10_133si"]
+[ext_resource type="Texture2D" uid="uid://d3qg76o8v0dlu" path="res://Assets/BackgroundOutlines.png" id="13_nrlyp"]
+[ext_resource type="Script" uid="uid://wh5md318hsft" path="res://Scripts/parallax_2d.gd" id="14_44tr1"]
+[ext_resource type="Texture2D" uid="uid://ds0h22ukoad0m" path="res://Assets/BackgroundOptionCombo.png" id="15_pmxqn"]
 
 [node name="Level" type="Node2D"]
 texture_filter = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="sky" type="TextureRect" parent="Node2D"]
+offset_left = -707.0
+offset_top = -1595.0
+offset_right = 2961.0
+offset_bottom = 450.0
+texture = ExtResource("1_b10nm")
+
+[node name="citybg29" type="TextureRect" parent="Node2D"]
+offset_left = 103.0
+offset_top = -1045.0
+offset_right = 903.0
+offset_bottom = -445.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg28" type="TextureRect" parent="Node2D"]
+offset_left = 611.0
+offset_top = -1346.0
+offset_right = 1411.0
+offset_bottom = -746.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg26" type="TextureRect" parent="Node2D"]
+offset_left = 1846.0
+offset_top = -1717.0
+offset_right = 2646.0
+offset_bottom = -1117.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg30" type="TextureRect" parent="Node2D"]
+offset_left = -190.0
+offset_top = -926.0
+offset_right = 610.0
+offset_bottom = -326.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg24" type="TextureRect" parent="Node2D"]
+offset_left = 1511.0
+offset_top = -1762.0
+offset_right = 2311.0
+offset_bottom = -1162.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg23" type="TextureRect" parent="Node2D"]
+offset_left = 1261.0
+offset_top = -1657.0
+offset_right = 2061.0
+offset_bottom = -1057.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg21" type="TextureRect" parent="Node2D"]
+offset_left = 1704.0
+offset_top = -1677.0
+offset_right = 2504.0
+offset_bottom = -1077.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg31" type="TextureRect" parent="Node2D"]
+offset_left = -489.0
+offset_top = -781.0
+offset_right = 311.0
+offset_bottom = -181.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg22" type="TextureRect" parent="Node2D"]
+offset_left = 1353.0
+offset_top = -1554.0
+offset_right = 2153.0
+offset_bottom = -954.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg32" type="TextureRect" parent="Node2D"]
+offset_left = -639.0
+offset_top = -662.0
+offset_right = 161.0
+offset_bottom = -62.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg20" type="TextureRect" parent="Node2D"]
+offset_left = 1193.0
+offset_top = -1470.0
+offset_right = 1993.0
+offset_bottom = -870.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg19" type="TextureRect" parent="Node2D"]
+offset_left = 1026.0
+offset_top = -1394.0
+offset_right = 1826.0
+offset_bottom = -794.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg27" type="TextureRect" parent="Node2D"]
+offset_left = 922.0
+offset_top = -1428.0
+offset_right = 1722.0
+offset_bottom = -828.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg18" type="TextureRect" parent="Node2D"]
+offset_left = 446.0
+offset_top = -1211.0
+offset_right = 1246.0
+offset_bottom = -611.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg17" type="TextureRect" parent="Node2D"]
+offset_left = 851.0
+offset_top = -1342.0
+offset_right = 1651.0
+offset_bottom = -742.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg25" type="TextureRect" parent="Node2D"]
+offset_left = 1295.0
+offset_top = -1343.0
+offset_right = 2095.0
+offset_bottom = -743.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg16" type="TextureRect" parent="Node2D"]
+offset_left = 1029.0
+offset_top = -1255.0
+offset_right = 1829.0
+offset_bottom = -655.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg14" type="TextureRect" parent="Node2D"]
+offset_left = 681.0
+offset_top = -1189.0
+offset_right = 1481.0
+offset_bottom = -589.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg13" type="TextureRect" parent="Node2D"]
+offset_left = 492.0
+offset_top = -1092.0
+offset_right = 1292.0
+offset_bottom = -492.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg12" type="TextureRect" parent="Node2D"]
+offset_left = 219.0
+offset_top = -976.0
+offset_right = 1019.0
+offset_bottom = -376.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg10" type="TextureRect" parent="Node2D"]
+offset_left = 35.0
+offset_top = -850.0
+offset_right = 835.0
+offset_bottom = -250.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg9" type="TextureRect" parent="Node2D"]
+offset_left = 347.0
+offset_top = -959.0
+offset_right = 1147.0
+offset_bottom = -359.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg15" type="TextureRect" parent="Node2D"]
+offset_left = 899.0
+offset_top = -1202.0
+offset_right = 1699.0
+offset_bottom = -602.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg8" type="TextureRect" parent="Node2D"]
+offset_left = 809.0
+offset_top = -1117.0
+offset_right = 1609.0
+offset_bottom = -517.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg11" type="TextureRect" parent="Node2D"]
+offset_left = -308.0
+offset_top = -720.0
+offset_right = 492.0
+offset_bottom = -120.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg6" type="TextureRect" parent="Node2D"]
+offset_left = -796.0
+offset_top = -570.0
+offset_right = 4.0
+offset_bottom = 30.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg4" type="TextureRect" parent="Node2D"]
+offset_left = 419.0
+offset_top = -932.0
+offset_right = 1219.0
+offset_bottom = -332.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg7" type="TextureRect" parent="Node2D"]
+offset_left = 419.0
+offset_top = -932.0
+offset_right = 1219.0
+offset_bottom = -332.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg3" type="TextureRect" parent="Node2D"]
+offset_left = 132.0
+offset_top = -760.0
+offset_right = 932.0
+offset_bottom = -160.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg5" type="TextureRect" parent="Node2D"]
+offset_left = -69.0
+offset_top = -694.0
+offset_right = 731.0
+offset_bottom = -94.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg1" type="TextureRect" parent="Node2D"]
+offset_left = -374.0
+offset_top = -636.0
+offset_right = 426.0
+offset_bottom = -36.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg2" type="TextureRect" parent="Node2D"]
+offset_left = -170.0
+offset_top = -627.0
+offset_right = 630.0
+offset_bottom = -27.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg33" type="TextureRect" parent="Node2D"]
+offset_left = -613.0
+offset_top = -490.0
+offset_right = 187.0
+offset_bottom = 110.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg34" type="TextureRect" parent="Node2D"]
+offset_left = 236.0
+offset_top = -730.0
+offset_right = 1036.0
+offset_bottom = -130.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg179" type="TextureRect" parent="Node2D"]
+offset_left = -967.0
+offset_top = -655.0
+offset_right = -167.0
+offset_bottom = -55.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg180" type="TextureRect" parent="Node2D"]
+offset_left = -459.0
+offset_top = -956.0
+offset_right = 341.0
+offset_bottom = -356.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg181" type="TextureRect" parent="Node2D"]
+offset_left = 776.0
+offset_top = -1327.0
+offset_right = 1576.0
+offset_bottom = -727.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg182" type="TextureRect" parent="Node2D"]
+offset_left = -1260.0
+offset_top = -536.0
+offset_right = -460.0
+offset_bottom = 64.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg183" type="TextureRect" parent="Node2D"]
+offset_left = 441.0
+offset_top = -1372.0
+offset_right = 1241.0
+offset_bottom = -772.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg184" type="TextureRect" parent="Node2D"]
+offset_left = 191.0
+offset_top = -1267.0
+offset_right = 991.0
+offset_bottom = -667.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg185" type="TextureRect" parent="Node2D"]
+offset_left = 634.0
+offset_top = -1287.0
+offset_right = 1434.0
+offset_bottom = -687.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg186" type="TextureRect" parent="Node2D"]
+offset_left = -1559.0
+offset_top = -391.0
+offset_right = -759.0
+offset_bottom = 209.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg187" type="TextureRect" parent="Node2D"]
+offset_left = 283.0
+offset_top = -1164.0
+offset_right = 1083.0
+offset_bottom = -564.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg188" type="TextureRect" parent="Node2D"]
+offset_left = -1709.0
+offset_top = -272.0
+offset_right = -909.0
+offset_bottom = 328.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg189" type="TextureRect" parent="Node2D"]
+offset_left = 123.0
+offset_top = -1080.0
+offset_right = 923.0
+offset_bottom = -480.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg190" type="TextureRect" parent="Node2D"]
+offset_left = -44.0
+offset_top = -1004.0
+offset_right = 756.0
+offset_bottom = -404.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg191" type="TextureRect" parent="Node2D"]
+offset_left = -148.0
+offset_top = -1038.0
+offset_right = 652.0
+offset_bottom = -438.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg192" type="TextureRect" parent="Node2D"]
+offset_left = -624.0
+offset_top = -821.0
+offset_right = 176.0
+offset_bottom = -221.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg193" type="TextureRect" parent="Node2D"]
+offset_left = -219.0
+offset_top = -952.0
+offset_right = 581.0
+offset_bottom = -352.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg194" type="TextureRect" parent="Node2D"]
+offset_left = 225.0
+offset_top = -953.0
+offset_right = 1025.0
+offset_bottom = -353.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg195" type="TextureRect" parent="Node2D"]
+offset_left = -41.0
+offset_top = -865.0
+offset_right = 759.0
+offset_bottom = -265.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg196" type="TextureRect" parent="Node2D"]
+offset_left = -389.0
+offset_top = -799.0
+offset_right = 411.0
+offset_bottom = -199.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg197" type="TextureRect" parent="Node2D"]
+offset_left = -578.0
+offset_top = -702.0
+offset_right = 222.0
+offset_bottom = -102.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg198" type="TextureRect" parent="Node2D"]
+offset_left = -851.0
+offset_top = -586.0
+offset_right = -51.0
+offset_bottom = 14.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg199" type="TextureRect" parent="Node2D"]
+offset_left = -1035.0
+offset_top = -460.0
+offset_right = -235.0
+offset_bottom = 140.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg200" type="TextureRect" parent="Node2D"]
+offset_left = -723.0
+offset_top = -569.0
+offset_right = 77.0
+offset_bottom = 31.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg201" type="TextureRect" parent="Node2D"]
+offset_left = -171.0
+offset_top = -812.0
+offset_right = 629.0
+offset_bottom = -212.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg202" type="TextureRect" parent="Node2D"]
+offset_left = -261.0
+offset_top = -727.0
+offset_right = 539.0
+offset_bottom = -127.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg203" type="TextureRect" parent="Node2D"]
+offset_left = -1378.0
+offset_top = -330.0
+offset_right = -578.0
+offset_bottom = 270.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg204" type="TextureRect" parent="Node2D"]
+offset_left = -1866.0
+offset_top = -180.0
+offset_right = -1066.0
+offset_bottom = 420.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg205" type="TextureRect" parent="Node2D"]
+offset_left = -651.0
+offset_top = -542.0
+offset_right = 149.0
+offset_bottom = 58.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg206" type="TextureRect" parent="Node2D"]
+offset_left = -651.0
+offset_top = -542.0
+offset_right = 149.0
+offset_bottom = 58.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg207" type="TextureRect" parent="Node2D"]
+offset_left = -938.0
+offset_top = -370.0
+offset_right = -138.0
+offset_bottom = 230.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg208" type="TextureRect" parent="Node2D"]
+offset_left = -1139.0
+offset_top = -304.0
+offset_right = -339.0
+offset_bottom = 296.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg209" type="TextureRect" parent="Node2D"]
+offset_left = -1444.0
+offset_top = -246.0
+offset_right = -644.0
+offset_bottom = 354.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg210" type="TextureRect" parent="Node2D"]
+offset_left = -1240.0
+offset_top = -237.0
+offset_right = -440.0
+offset_bottom = 363.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg211" type="TextureRect" parent="Node2D"]
+offset_left = -1683.0
+offset_top = -100.0
+offset_right = -883.0
+offset_bottom = 500.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg212" type="TextureRect" parent="Node2D"]
+offset_left = -834.0
+offset_top = -340.0
+offset_right = -34.0
+offset_bottom = 260.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg145" type="TextureRect" parent="Node2D"]
+offset_left = 856.0
+offset_top = -1404.0
+offset_right = 1656.0
+offset_bottom = -804.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg146" type="TextureRect" parent="Node2D"]
+offset_left = 1364.0
+offset_top = -1705.0
+offset_right = 2164.0
+offset_bottom = -1105.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg147" type="TextureRect" parent="Node2D"]
+offset_left = 2599.0
+offset_top = -2076.0
+offset_right = 3399.0
+offset_bottom = -1476.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg148" type="TextureRect" parent="Node2D"]
+offset_left = 563.0
+offset_top = -1285.0
+offset_right = 1363.0
+offset_bottom = -685.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg149" type="TextureRect" parent="Node2D"]
+offset_left = 2264.0
+offset_top = -2121.0
+offset_right = 3064.0
+offset_bottom = -1521.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg150" type="TextureRect" parent="Node2D"]
+offset_left = 2014.0
+offset_top = -2016.0
+offset_right = 2814.0
+offset_bottom = -1416.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg151" type="TextureRect" parent="Node2D"]
+offset_left = 2457.0
+offset_top = -2036.0
+offset_right = 3257.0
+offset_bottom = -1436.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg152" type="TextureRect" parent="Node2D"]
+offset_left = 264.0
+offset_top = -1140.0
+offset_right = 1064.0
+offset_bottom = -540.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg153" type="TextureRect" parent="Node2D"]
+offset_left = 2106.0
+offset_top = -1913.0
+offset_right = 2906.0
+offset_bottom = -1313.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg154" type="TextureRect" parent="Node2D"]
+offset_left = 114.0
+offset_top = -1021.0
+offset_right = 914.0
+offset_bottom = -421.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg155" type="TextureRect" parent="Node2D"]
+offset_left = 1946.0
+offset_top = -1829.0
+offset_right = 2746.0
+offset_bottom = -1229.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg156" type="TextureRect" parent="Node2D"]
+offset_left = 1779.0
+offset_top = -1753.0
+offset_right = 2579.0
+offset_bottom = -1153.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg157" type="TextureRect" parent="Node2D"]
+offset_left = 1675.0
+offset_top = -1787.0
+offset_right = 2475.0
+offset_bottom = -1187.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg158" type="TextureRect" parent="Node2D"]
+offset_left = 1199.0
+offset_top = -1570.0
+offset_right = 1999.0
+offset_bottom = -970.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg159" type="TextureRect" parent="Node2D"]
+offset_left = 1604.0
+offset_top = -1701.0
+offset_right = 2404.0
+offset_bottom = -1101.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg160" type="TextureRect" parent="Node2D"]
+offset_left = 2048.0
+offset_top = -1702.0
+offset_right = 2848.0
+offset_bottom = -1102.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg161" type="TextureRect" parent="Node2D"]
+offset_left = 1782.0
+offset_top = -1614.0
+offset_right = 2582.0
+offset_bottom = -1014.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg162" type="TextureRect" parent="Node2D"]
+offset_left = 1434.0
+offset_top = -1548.0
+offset_right = 2234.0
+offset_bottom = -948.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg163" type="TextureRect" parent="Node2D"]
+offset_left = 1245.0
+offset_top = -1451.0
+offset_right = 2045.0
+offset_bottom = -851.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg164" type="TextureRect" parent="Node2D"]
+offset_left = 972.0
+offset_top = -1335.0
+offset_right = 1772.0
+offset_bottom = -735.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg165" type="TextureRect" parent="Node2D"]
+offset_left = 788.0
+offset_top = -1209.0
+offset_right = 1588.0
+offset_bottom = -609.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg166" type="TextureRect" parent="Node2D"]
+offset_left = 1100.0
+offset_top = -1318.0
+offset_right = 1900.0
+offset_bottom = -718.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg167" type="TextureRect" parent="Node2D"]
+offset_left = 1652.0
+offset_top = -1561.0
+offset_right = 2452.0
+offset_bottom = -961.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg168" type="TextureRect" parent="Node2D"]
+offset_left = 1562.0
+offset_top = -1476.0
+offset_right = 2362.0
+offset_bottom = -876.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg169" type="TextureRect" parent="Node2D"]
+offset_left = 445.0
+offset_top = -1079.0
+offset_right = 1245.0
+offset_bottom = -479.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg170" type="TextureRect" parent="Node2D"]
+offset_left = -43.0
+offset_top = -929.0
+offset_right = 757.0
+offset_bottom = -329.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg171" type="TextureRect" parent="Node2D"]
+offset_left = 1172.0
+offset_top = -1291.0
+offset_right = 1972.0
+offset_bottom = -691.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg172" type="TextureRect" parent="Node2D"]
+offset_left = 1172.0
+offset_top = -1291.0
+offset_right = 1972.0
+offset_bottom = -691.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg173" type="TextureRect" parent="Node2D"]
+offset_left = 885.0
+offset_top = -1119.0
+offset_right = 1685.0
+offset_bottom = -519.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg174" type="TextureRect" parent="Node2D"]
+offset_left = 684.0
+offset_top = -1053.0
+offset_right = 1484.0
+offset_bottom = -453.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg175" type="TextureRect" parent="Node2D"]
+offset_left = 379.0
+offset_top = -995.0
+offset_right = 1179.0
+offset_bottom = -395.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg176" type="TextureRect" parent="Node2D"]
+offset_left = 583.0
+offset_top = -986.0
+offset_right = 1383.0
+offset_bottom = -386.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg177" type="TextureRect" parent="Node2D"]
+offset_left = 140.0
+offset_top = -849.0
+offset_right = 940.0
+offset_bottom = -249.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg178" type="TextureRect" parent="Node2D"]
+offset_left = 989.0
+offset_top = -1089.0
+offset_right = 1789.0
+offset_bottom = -489.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg111" type="TextureRect" parent="Node2D"]
+offset_left = 913.0
+offset_top = -948.0
+offset_right = 1713.0
+offset_bottom = -348.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg112" type="TextureRect" parent="Node2D"]
+offset_left = 1421.0
+offset_top = -1249.0
+offset_right = 2221.0
+offset_bottom = -649.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg113" type="TextureRect" parent="Node2D"]
+offset_left = 2656.0
+offset_top = -1620.0
+offset_right = 3456.0
+offset_bottom = -1020.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg114" type="TextureRect" parent="Node2D"]
+offset_left = 620.0
+offset_top = -829.0
+offset_right = 1420.0
+offset_bottom = -229.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg115" type="TextureRect" parent="Node2D"]
+offset_left = 2321.0
+offset_top = -1665.0
+offset_right = 3121.0
+offset_bottom = -1065.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg116" type="TextureRect" parent="Node2D"]
+offset_left = 2071.0
+offset_top = -1560.0
+offset_right = 2871.0
+offset_bottom = -960.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg117" type="TextureRect" parent="Node2D"]
+offset_left = 2514.0
+offset_top = -1580.0
+offset_right = 3314.0
+offset_bottom = -980.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg118" type="TextureRect" parent="Node2D"]
+offset_left = 321.0
+offset_top = -684.0
+offset_right = 1121.0
+offset_bottom = -84.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg119" type="TextureRect" parent="Node2D"]
+offset_left = 2163.0
+offset_top = -1457.0
+offset_right = 2963.0
+offset_bottom = -857.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg120" type="TextureRect" parent="Node2D"]
+offset_left = 171.0
+offset_top = -565.0
+offset_right = 971.0
+offset_bottom = 35.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg121" type="TextureRect" parent="Node2D"]
+offset_left = 2003.0
+offset_top = -1373.0
+offset_right = 2803.0
+offset_bottom = -773.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg122" type="TextureRect" parent="Node2D"]
+offset_left = 1836.0
+offset_top = -1297.0
+offset_right = 2636.0
+offset_bottom = -697.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg123" type="TextureRect" parent="Node2D"]
+offset_left = 1732.0
+offset_top = -1331.0
+offset_right = 2532.0
+offset_bottom = -731.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg124" type="TextureRect" parent="Node2D"]
+offset_left = 1256.0
+offset_top = -1114.0
+offset_right = 2056.0
+offset_bottom = -514.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg125" type="TextureRect" parent="Node2D"]
+offset_left = 1661.0
+offset_top = -1245.0
+offset_right = 2461.0
+offset_bottom = -645.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg126" type="TextureRect" parent="Node2D"]
+offset_left = 2105.0
+offset_top = -1246.0
+offset_right = 2905.0
+offset_bottom = -646.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg127" type="TextureRect" parent="Node2D"]
+offset_left = 1839.0
+offset_top = -1158.0
+offset_right = 2639.0
+offset_bottom = -558.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg128" type="TextureRect" parent="Node2D"]
+offset_left = 1491.0
+offset_top = -1092.0
+offset_right = 2291.0
+offset_bottom = -492.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg129" type="TextureRect" parent="Node2D"]
+offset_left = 1302.0
+offset_top = -995.0
+offset_right = 2102.0
+offset_bottom = -395.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg130" type="TextureRect" parent="Node2D"]
+offset_left = 1029.0
+offset_top = -879.0
+offset_right = 1829.0
+offset_bottom = -279.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg131" type="TextureRect" parent="Node2D"]
+offset_left = 845.0
+offset_top = -753.0
+offset_right = 1645.0
+offset_bottom = -153.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg132" type="TextureRect" parent="Node2D"]
+offset_left = 1157.0
+offset_top = -862.0
+offset_right = 1957.0
+offset_bottom = -262.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg133" type="TextureRect" parent="Node2D"]
+offset_left = 1709.0
+offset_top = -1105.0
+offset_right = 2509.0
+offset_bottom = -505.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg134" type="TextureRect" parent="Node2D"]
+offset_left = 1619.0
+offset_top = -1020.0
+offset_right = 2419.0
+offset_bottom = -420.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg135" type="TextureRect" parent="Node2D"]
+offset_left = 502.0
+offset_top = -623.0
+offset_right = 1302.0
+offset_bottom = -23.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg136" type="TextureRect" parent="Node2D"]
+offset_left = 14.0
+offset_top = -473.0
+offset_right = 814.0
+offset_bottom = 127.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg137" type="TextureRect" parent="Node2D"]
+offset_left = 1229.0
+offset_top = -835.0
+offset_right = 2029.0
+offset_bottom = -235.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg138" type="TextureRect" parent="Node2D"]
+offset_left = 1229.0
+offset_top = -835.0
+offset_right = 2029.0
+offset_bottom = -235.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg139" type="TextureRect" parent="Node2D"]
+offset_left = 942.0
+offset_top = -663.0
+offset_right = 1742.0
+offset_bottom = -63.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg140" type="TextureRect" parent="Node2D"]
+offset_left = 741.0
+offset_top = -597.0
+offset_right = 1541.0
+offset_bottom = 3.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg141" type="TextureRect" parent="Node2D"]
+offset_left = 436.0
+offset_top = -539.0
+offset_right = 1236.0
+offset_bottom = 61.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg142" type="TextureRect" parent="Node2D"]
+offset_left = 640.0
+offset_top = -530.0
+offset_right = 1440.0
+offset_bottom = 70.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg143" type="TextureRect" parent="Node2D"]
+offset_left = 197.0
+offset_top = -393.0
+offset_right = 997.0
+offset_bottom = 207.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg144" type="TextureRect" parent="Node2D"]
+offset_left = 1046.0
+offset_top = -633.0
+offset_right = 1846.0
+offset_bottom = -33.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg35" type="TextureRect" parent="Node2D"]
+offset_left = 744.0
+offset_top = -1031.0
+offset_right = 1544.0
+offset_bottom = -431.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg36" type="TextureRect" parent="Node2D"]
+offset_left = 1979.0
+offset_top = -1402.0
+offset_right = 2779.0
+offset_bottom = -802.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg37" type="TextureRect" parent="Node2D"]
+offset_left = -57.0
+offset_top = -611.0
+offset_right = 743.0
+offset_bottom = -11.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg38" type="TextureRect" parent="Node2D"]
+offset_left = 1644.0
+offset_top = -1447.0
+offset_right = 2444.0
+offset_bottom = -847.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg39" type="TextureRect" parent="Node2D"]
+offset_left = 1394.0
+offset_top = -1342.0
+offset_right = 2194.0
+offset_bottom = -742.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg40" type="TextureRect" parent="Node2D"]
+offset_left = 1837.0
+offset_top = -1362.0
+offset_right = 2637.0
+offset_bottom = -762.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg41" type="TextureRect" parent="Node2D"]
+offset_left = -356.0
+offset_top = -466.0
+offset_right = 444.0
+offset_bottom = 134.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg42" type="TextureRect" parent="Node2D"]
+offset_left = 1486.0
+offset_top = -1239.0
+offset_right = 2286.0
+offset_bottom = -639.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg43" type="TextureRect" parent="Node2D"]
+offset_left = -506.0
+offset_top = -347.0
+offset_right = 294.0
+offset_bottom = 253.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg44" type="TextureRect" parent="Node2D"]
+offset_left = 1326.0
+offset_top = -1155.0
+offset_right = 2126.0
+offset_bottom = -555.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg45" type="TextureRect" parent="Node2D"]
+offset_left = 1159.0
+offset_top = -1079.0
+offset_right = 1959.0
+offset_bottom = -479.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg46" type="TextureRect" parent="Node2D"]
+offset_left = 1055.0
+offset_top = -1113.0
+offset_right = 1855.0
+offset_bottom = -513.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg47" type="TextureRect" parent="Node2D"]
+offset_left = 579.0
+offset_top = -896.0
+offset_right = 1379.0
+offset_bottom = -296.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg48" type="TextureRect" parent="Node2D"]
+offset_left = 984.0
+offset_top = -1027.0
+offset_right = 1784.0
+offset_bottom = -427.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg49" type="TextureRect" parent="Node2D"]
+offset_left = 1428.0
+offset_top = -1028.0
+offset_right = 2228.0
+offset_bottom = -428.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg50" type="TextureRect" parent="Node2D"]
+offset_left = 1162.0
+offset_top = -940.0
+offset_right = 1962.0
+offset_bottom = -340.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg51" type="TextureRect" parent="Node2D"]
+offset_left = 814.0
+offset_top = -874.0
+offset_right = 1614.0
+offset_bottom = -274.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg52" type="TextureRect" parent="Node2D"]
+offset_left = 625.0
+offset_top = -777.0
+offset_right = 1425.0
+offset_bottom = -177.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg53" type="TextureRect" parent="Node2D"]
+offset_left = 352.0
+offset_top = -661.0
+offset_right = 1152.0
+offset_bottom = -61.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg54" type="TextureRect" parent="Node2D"]
+offset_left = 168.0
+offset_top = -535.0
+offset_right = 968.0
+offset_bottom = 65.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg55" type="TextureRect" parent="Node2D"]
+offset_left = 480.0
+offset_top = -644.0
+offset_right = 1280.0
+offset_bottom = -44.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg56" type="TextureRect" parent="Node2D"]
+offset_left = 1032.0
+offset_top = -887.0
+offset_right = 1832.0
+offset_bottom = -287.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg57" type="TextureRect" parent="Node2D"]
+offset_left = 942.0
+offset_top = -802.0
+offset_right = 1742.0
+offset_bottom = -202.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg58" type="TextureRect" parent="Node2D"]
+offset_left = -175.0
+offset_top = -405.0
+offset_right = 625.0
+offset_bottom = 195.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg59" type="TextureRect" parent="Node2D"]
+offset_left = -663.0
+offset_top = -255.0
+offset_right = 137.0
+offset_bottom = 345.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg60" type="TextureRect" parent="Node2D"]
+offset_left = 552.0
+offset_top = -617.0
+offset_right = 1352.0
+offset_bottom = -17.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg61" type="TextureRect" parent="Node2D"]
+offset_left = 552.0
+offset_top = -617.0
+offset_right = 1352.0
+offset_bottom = -17.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg62" type="TextureRect" parent="Node2D"]
+offset_left = 265.0
+offset_top = -445.0
+offset_right = 1065.0
+offset_bottom = 155.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg63" type="TextureRect" parent="Node2D"]
+offset_left = 64.0
+offset_top = -379.0
+offset_right = 864.0
+offset_bottom = 221.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg64" type="TextureRect" parent="Node2D"]
+offset_left = -241.0
+offset_top = -321.0
+offset_right = 559.0
+offset_bottom = 279.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg65" type="TextureRect" parent="Node2D"]
+offset_left = -37.0
+offset_top = -312.0
+offset_right = 763.0
+offset_bottom = 288.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg66" type="TextureRect" parent="Node2D"]
+offset_left = -480.0
+offset_top = -175.0
+offset_right = 320.0
+offset_bottom = 425.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg67" type="TextureRect" parent="Node2D"]
+offset_left = 716.0
+offset_top = -562.0
+offset_right = 1516.0
+offset_bottom = 38.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg68" type="TextureRect" parent="Node2D"]
+offset_left = 1224.0
+offset_top = -863.0
+offset_right = 2024.0
+offset_bottom = -263.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg69" type="TextureRect" parent="Node2D"]
+offset_left = 2459.0
+offset_top = -1234.0
+offset_right = 3259.0
+offset_bottom = -634.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg70" type="TextureRect" parent="Node2D"]
+offset_left = 423.0
+offset_top = -443.0
+offset_right = 1223.0
+offset_bottom = 157.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg71" type="TextureRect" parent="Node2D"]
+offset_left = 2124.0
+offset_top = -1279.0
+offset_right = 2924.0
+offset_bottom = -679.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg72" type="TextureRect" parent="Node2D"]
+offset_left = 1874.0
+offset_top = -1174.0
+offset_right = 2674.0
+offset_bottom = -574.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg73" type="TextureRect" parent="Node2D"]
+offset_left = 2317.0
+offset_top = -1194.0
+offset_right = 3117.0
+offset_bottom = -594.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg74" type="TextureRect" parent="Node2D"]
+offset_left = 124.0
+offset_top = -298.0
+offset_right = 924.0
+offset_bottom = 302.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg75" type="TextureRect" parent="Node2D"]
+offset_left = 1966.0
+offset_top = -1071.0
+offset_right = 2766.0
+offset_bottom = -471.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg76" type="TextureRect" parent="Node2D"]
+offset_left = -26.0
+offset_top = -179.0
+offset_right = 774.0
+offset_bottom = 421.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg77" type="TextureRect" parent="Node2D"]
+offset_left = 1806.0
+offset_top = -987.0
+offset_right = 2606.0
+offset_bottom = -387.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg78" type="TextureRect" parent="Node2D"]
+offset_left = 1639.0
+offset_top = -911.0
+offset_right = 2439.0
+offset_bottom = -311.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg79" type="TextureRect" parent="Node2D"]
+offset_left = 1535.0
+offset_top = -945.0
+offset_right = 2335.0
+offset_bottom = -345.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg80" type="TextureRect" parent="Node2D"]
+offset_left = 1059.0
+offset_top = -728.0
+offset_right = 1859.0
+offset_bottom = -128.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg81" type="TextureRect" parent="Node2D"]
+offset_left = 1464.0
+offset_top = -859.0
+offset_right = 2264.0
+offset_bottom = -259.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg82" type="TextureRect" parent="Node2D"]
+offset_left = 1908.0
+offset_top = -860.0
+offset_right = 2708.0
+offset_bottom = -260.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg83" type="TextureRect" parent="Node2D"]
+offset_left = 1642.0
+offset_top = -772.0
+offset_right = 2442.0
+offset_bottom = -172.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg100" type="TextureRect" parent="Node2D"]
+offset_left = 2317.0
+offset_top = -1194.0
+offset_right = 3117.0
+offset_bottom = -594.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg101" type="TextureRect" parent="Node2D"]
+offset_left = 124.0
+offset_top = -298.0
+offset_right = 924.0
+offset_bottom = 302.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg102" type="TextureRect" parent="Node2D"]
+offset_left = 1966.0
+offset_top = -1071.0
+offset_right = 2766.0
+offset_bottom = -471.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg103" type="TextureRect" parent="Node2D"]
+offset_left = -26.0
+offset_top = -179.0
+offset_right = 774.0
+offset_bottom = 421.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg104" type="TextureRect" parent="Node2D"]
+offset_left = 1806.0
+offset_top = -987.0
+offset_right = 2606.0
+offset_bottom = -387.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg105" type="TextureRect" parent="Node2D"]
+offset_left = 1639.0
+offset_top = -911.0
+offset_right = 2439.0
+offset_bottom = -311.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg106" type="TextureRect" parent="Node2D"]
+offset_left = 1535.0
+offset_top = -945.0
+offset_right = 2335.0
+offset_bottom = -345.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg107" type="TextureRect" parent="Node2D"]
+offset_left = 1059.0
+offset_top = -728.0
+offset_right = 1859.0
+offset_bottom = -128.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg108" type="TextureRect" parent="Node2D"]
+offset_left = 1464.0
+offset_top = -859.0
+offset_right = 2264.0
+offset_bottom = -259.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg109" type="TextureRect" parent="Node2D"]
+offset_left = 1908.0
+offset_top = -860.0
+offset_right = 2708.0
+offset_bottom = -260.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg110" type="TextureRect" parent="Node2D"]
+offset_left = 1642.0
+offset_top = -772.0
+offset_right = 2442.0
+offset_bottom = -172.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg84" type="TextureRect" parent="Node2D"]
+offset_left = 1294.0
+offset_top = -706.0
+offset_right = 2094.0
+offset_bottom = -106.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg85" type="TextureRect" parent="Node2D"]
+offset_left = 1105.0
+offset_top = -609.0
+offset_right = 1905.0
+offset_bottom = -9.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg86" type="TextureRect" parent="Node2D"]
+offset_left = 832.0
+offset_top = -493.0
+offset_right = 1632.0
+offset_bottom = 107.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg87" type="TextureRect" parent="Node2D"]
+offset_left = 648.0
+offset_top = -367.0
+offset_right = 1448.0
+offset_bottom = 233.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg88" type="TextureRect" parent="Node2D"]
+offset_left = 960.0
+offset_top = -476.0
+offset_right = 1760.0
+offset_bottom = 124.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg89" type="TextureRect" parent="Node2D"]
+offset_left = 1512.0
+offset_top = -719.0
+offset_right = 2312.0
+offset_bottom = -119.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg90" type="TextureRect" parent="Node2D"]
+offset_left = 1422.0
+offset_top = -634.0
+offset_right = 2222.0
+offset_bottom = -34.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg91" type="TextureRect" parent="Node2D"]
+offset_left = 305.0
+offset_top = -237.0
+offset_right = 1105.0
+offset_bottom = 363.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg92" type="TextureRect" parent="Node2D"]
+offset_left = -183.0
+offset_top = -87.0
+offset_right = 617.0
+offset_bottom = 513.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg93" type="TextureRect" parent="Node2D"]
+offset_left = 1032.0
+offset_top = -449.0
+offset_right = 1832.0
+offset_bottom = 151.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg94" type="TextureRect" parent="Node2D"]
+offset_left = 1032.0
+offset_top = -449.0
+offset_right = 1832.0
+offset_bottom = 151.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg95" type="TextureRect" parent="Node2D"]
+offset_left = 745.0
+offset_top = -277.0
+offset_right = 1545.0
+offset_bottom = 323.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg96" type="TextureRect" parent="Node2D"]
+offset_left = 544.0
+offset_top = -211.0
+offset_right = 1344.0
+offset_bottom = 389.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg97" type="TextureRect" parent="Node2D"]
+offset_left = 239.0
+offset_top = -153.0
+offset_right = 1039.0
+offset_bottom = 447.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg98" type="TextureRect" parent="Node2D"]
+offset_left = 443.0
+offset_top = -144.0
+offset_right = 1243.0
+offset_bottom = 456.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
+
+[node name="citybg99" type="TextureRect" parent="Node2D"]
+offset_top = -7.0
+offset_right = 800.0
+offset_bottom = 593.0
+texture = ExtResource("2_fhlu0")
+stretch_mode = 1
 
 [node name="TileMap" parent="." instance=ExtResource("1_vsvp5")]
 y_sort_enabled = true
@@ -103,6 +1812,55 @@ stream = ExtResource("10_133si")
 volume_db = -11.68
 autoplay = true
 parameters/looping = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -652.0
+offset_top = -655.0
+offset_right = 933.0
+offset_bottom = 455.0
+texture = ExtResource("13_nrlyp")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 828.0
+offset_top = -795.0
+offset_right = 2413.0
+offset_bottom = 631.0
+texture = ExtResource("13_nrlyp")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 1487.0
+offset_top = -1153.0
+offset_right = 3072.0
+offset_bottom = 273.0
+texture = ExtResource("13_nrlyp")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 1819.0
+offset_top = -1407.0
+offset_right = 3404.0
+offset_bottom = 19.0
+texture = ExtResource("13_nrlyp")
+stretch_mode = 4
+flip_h = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 2037.0
+offset_top = -1672.0
+offset_right = 3622.0
+offset_bottom = -246.0
+texture = ExtResource("13_nrlyp")
+stretch_mode = 4
+
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+script = ExtResource("14_44tr1")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+texture = ExtResource("15_pmxqn")
 
 [connection signal="closeWithSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="Player" method="onMinigameEnd"]
 [connection signal="closeWithSuccess" from="Player/SecurityDroneShootemUp/MinigamePopup" to="SecurityDronePatrol" method="onMinigameSuccess"]
