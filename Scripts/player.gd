@@ -36,12 +36,12 @@ func changeAnimation():
 		animatedSprite.play("back")
 		lastVelY = velocity.y
 	
-	if lastVelY > 0:
+	if lastVelY >= 0:
 		if velocity.x < 0:
 			animatedSprite.flip_h = true
 		elif velocity.x > 0:
 			animatedSprite.flip_h = false
-	else:
+	elif lastVelY < 0:
 		if velocity.x < 0:
 			animatedSprite.flip_h = false
 		elif velocity.x > 0:

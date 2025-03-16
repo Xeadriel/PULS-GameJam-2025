@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3unioq48xo4w"]
+[gd_scene load_steps=5 format=3 uid="uid://b3unioq48xo4w"]
 
 [ext_resource type="Script" uid="uid://b6ia1vmd5apds" path="res://Scripts/InteractibleObject.gd" id="1_uw1m8"]
 [ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="2_vavmc"]
-[ext_resource type="Texture2D" uid="uid://1o8hrbxn8h4f" path="res://icon.svg" id="3_vavmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
 size = Vector2(125, 122)
@@ -37,6 +36,5 @@ offset_bottom = 101.0
 text = "Press B To Destroy"
 label_settings = SubResource("LabelSettings_j8x1u")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0, 0.53, 0.0794999, 1)
-texture = ExtResource("3_vavmc")

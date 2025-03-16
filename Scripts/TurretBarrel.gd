@@ -12,14 +12,14 @@ var shootTimer = 0
 func _process(delta: float) -> void:
 	shootTimer += delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shootTimer >= SHOOTING_SPEED:
-		var direction = (get_viewport().get_mouse_position() - barrelSprite.global_position).normalized()
+		var direction = (get_global_mouse_position() - barrelSprite.global_position).normalized()
 		direction.x = clamp(direction.x, 0, 1)
 		shoot(direction)
 		shootTimer = 0
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		look_at(event.position)
+		look_at(get_global_mouse_position())
 		rotation_degrees = clamp(rotation_degrees, -90, 90)
 
 func shoot(direction):

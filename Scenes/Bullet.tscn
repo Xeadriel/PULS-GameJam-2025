@@ -34,7 +34,7 @@ texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_nr8tw")
 animation = &"loop"
 autoplay = "loop"
-frame_progress = 0.120483
+frame_progress = 0.457085
 script = ExtResource("1_vlxeq")
 
 [node name="Hitbox" type="Area2D" parent="."]

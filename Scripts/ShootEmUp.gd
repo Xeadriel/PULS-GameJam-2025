@@ -17,6 +17,7 @@ signal win
 
 func _ready():
 	shipsLeft = enemyShipCount
+	set_process(false)
 
 func _process(delta: float) -> void:
 	spawnTimer += delta
@@ -44,3 +45,6 @@ func enemyDied():
 	enemyShipDeathCount +=1
 	if enemyShipDeathCount == enemyShipCount:
 		win.emit()
+
+func startMinigame():
+	set_process(true)
