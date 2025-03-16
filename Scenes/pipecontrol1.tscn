@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://n2ok0cbny872"]
+
+[ext_resource type="Texture2D" uid="uid://bcjrq7y3aypxm" path="res://Assets/pipe3.png" id="1_3wu1v"]
+[ext_resource type="Script" uid="uid://cdda3512og5el" path="res://Scripts/control.gd" id="2_pm1aw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wu1v"]
+size = Vector2(11, 31.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2wf"]
+size = Vector2(33, 9.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2nvd"]
+size = Vector2(32.75, 11)
+
+[node name="Control" type="TextureButton"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1071.0
+offset_bottom = -593.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40.5, 22.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_3wu1v")
+script = ExtResource("2_pm1aw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 31.75)
+shape = SubResource("RectangleShape2D_3wu1v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(48.5, 0.5)
+shape = SubResource("RectangleShape2D_7x2wf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(48.625, 64.5)
+shape = SubResource("RectangleShape2D_s2nvd")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

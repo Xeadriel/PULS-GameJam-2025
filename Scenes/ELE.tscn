@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdhvjmxmb327r"]
+
+[ext_resource type="Script" uid="uid://nrm1fccoti1v" path="res://Scripts/ele.gd" id="1_0sie5"]
+[ext_resource type="PackedScene" uid="uid://n2ok0cbny872" path="res://Scenes/pipecontrol1.tscn" id="2_isva4"]
+[ext_resource type="PackedScene" uid="uid://dc11l54aoeif8" path="res://Scenes/pipecontrol2.tscn" id="3_blhv0"]
+[ext_resource type="PackedScene" uid="uid://dg28fagqh0gl6" path="res://Scenes/pipecontrol3.tscn" id="4_67bma"]
+[ext_resource type="Texture2D" uid="uid://oiajhoe6jtrr" path="res://Assets/pipeBegnning.png" id="5_mjpjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjpjb"]
+size = Vector2(137.719, 28.5615)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_67bma"]
+load_path = "res://.godot/imported/start point.png-7cc8cf5ca1fa65078ffb9b3a00960b9d.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgxt5"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_0sie5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Window" type="Window" parent="."]
+title = "POP UP"
+initial_position = 1
+size = Vector2i(500, 500)
+
+[node name="Camera2D" type="Camera2D" parent="Window"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/Camera2D"]
+
+[node name="GridContainer" type="GridContainer" parent="Window"]
+texture_filter = 1
+offset_right = 500.0
+offset_bottom = 499.0
+columns = 4
+
+[node name="Control" parent="Window/GridContainer" instance=ExtResource("2_isva4")]
+layout_mode = 2
+
+[node name="Control4" parent="Window/GridContainer" instance=ExtResource("2_isva4")]
+layout_mode = 2
+
+[node name="Control2" parent="Window/GridContainer" instance=ExtResource("3_blhv0")]
+layout_mode = 2
+
+[node name="Control5" parent="Window/GridContainer" instance=ExtResource("3_blhv0")]
+layout_mode = 2
+
+[node name="Control7" parent="Window/GridContainer" instance=ExtResource("3_blhv0")]
+layout_mode = 2
+
+[node name="Control3" parent="Window/GridContainer" instance=ExtResource("4_67bma")]
+layout_mode = 2
+
+[node name="Control6" parent="Window/GridContainer" instance=ExtResource("4_67bma")]
+layout_mode = 2
+
+[node name="Control8" parent="Window/GridContainer" instance=ExtResource("4_67bma")]
+layout_mode = 2
+
+[node name="Staticbody2d2" type="StaticBody2D" parent="Window/GridContainer"]
+position = Vector2(423, 5)
+rotation = 3.14159
+scale = Vector2(0.471977, 0.385136)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Window/GridContainer/Staticbody2d2"]
+position = Vector2(-1.05945, -2.59648)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_mjpjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/GridContainer/Staticbody2d2"]
+texture = SubResource("CompressedTexture2D_67bma")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Window"]
+position = Vector2(339, 473)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/StaticBody2D"]
+shape = SubResource("RectangleShape2D_vgxt5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/StaticBody2D"]
+texture_filter = 1
+position = Vector2(3, -5)
+texture = ExtResource("5_mjpjb")

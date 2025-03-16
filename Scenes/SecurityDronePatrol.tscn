@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc6gi6mmublqr"]
+
+[ext_resource type="Script" uid="uid://cwk640seyo60v" path="res://Scripts/SecurityDronePatrol.gd" id="1_miu0q"]
+[ext_resource type="Texture2D" uid="uid://7ooq5ed4osqp" path="res://Assets/SecurityDrones.png" id="2_miu0q"]
+[ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="3_miu0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
+size = Vector2(40, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fy2qp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_miu0q")
+}],
+"loop": true,
+"name": &"evil",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fy2qp"]
+font = ExtResource("3_miu0q")
+font_size = 32
+
+[node name="SecurityDronePatrol" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_miu0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+z_index = -1
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_h7xss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_fy2qp")
+animation = &"evil"
+autoplay = "evil"
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_left = -124.0
+offset_top = -56.0
+offset_right = 210.0
+offset_bottom = -27.0
+scale = Vector2(0.8, 0.8)
+text = "Press E to interact"
+label_settings = SubResource("LabelSettings_fy2qp")
+
+[node name="DestroyLabel" type="Label" parent="."]
+offset_left = -124.0
+offset_top = 26.0
+offset_right = 196.0
+offset_bottom = 55.0
+scale = Vector2(0.8, 0.8)
+text = "Press B To Destroy"
+label_settings = SubResource("LabelSettings_fy2qp")

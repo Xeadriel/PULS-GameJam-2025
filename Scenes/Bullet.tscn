@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn6q3hmcx7due"]
+
+[ext_resource type="Texture2D" uid="uid://c57mnihsp7t7r" path="res://Assets/Bullet1.png" id="1_pypll"]
+[ext_resource type="Script" uid="uid://fl3urvn0d4ys" path="res://Scripts/Bullet.gd" id="1_vlxeq"]
+[ext_resource type="Texture2D" uid="uid://cxvb26rdpu5wl" path="res://Assets/Bullet2.png" id="2_vg3fc"]
+[ext_resource type="Texture2D" uid="uid://dcp27g81w8nfp" path="res://Assets/Bullet3.png" id="3_cvob7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr8tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pypll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vg3fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cvob7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vg3fc")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlxeq"]
+radius = 4.0
+
+[node name="Bullet" type="AnimatedSprite2D"]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_nr8tw")
+animation = &"loop"
+autoplay = "loop"
+frame_progress = 0.457085
+script = ExtResource("1_vlxeq")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_vlxeq")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_onHitboxAreaEntered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_onHitboxAreaExited"]

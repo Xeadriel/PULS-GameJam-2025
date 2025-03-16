@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://dh38s48feviqj"]
+
+[ext_resource type="Script" uid="uid://c5ax3j180kj8q" path="res://Scripts/JunkRobot.gd" id="1_lso7p"]
+[ext_resource type="Texture2D" uid="uid://ddj52lhk3fbdj" path="res://Assets/JunkRobotEvil.png" id="3_lso7p"]
+[ext_resource type="Texture2D" uid="uid://ui8georlkemi" path="res://Assets/JunkRobot.png" id="4_ahwre"]
+[ext_resource type="FontFile" uid="uid://dtkumaoqssrks" path="res://Assets/upheavtt.ttf" id="4_den6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xss"]
+size = Vector2(40, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7qky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lso7p")
+}],
+"loop": true,
+"name": &"evil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ahwre")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mnlec"]
+font = ExtResource("4_den6r")
+font_size = 32
+
+[node name="JunkRobot" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_lso7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+shape = SubResource("RectangleShape2D_h7xss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y7qky")
+animation = &"evil"
+autoplay = "evil"
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 6
+offset_left = -124.0
+offset_top = -56.0
+offset_right = 210.0
+offset_bottom = -27.0
+scale = Vector2(0.8, 0.8)
+text = "Press E to interact"
+label_settings = SubResource("LabelSettings_mnlec")
+
+[node name="DestroyLabel" type="Label" parent="."]
+z_index = 6
+offset_left = -124.0
+offset_top = 26.0
+offset_right = 196.0
+offset_bottom = 55.0
+scale = Vector2(0.8, 0.8)
+text = "Press B To Destroy"
+label_settings = SubResource("LabelSettings_mnlec")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg28fagqh0gl6"]
+
+[ext_resource type="Texture2D" uid="uid://ckd5250yv8tgh" path="res://Assets/pipe2.png" id="1_113un"]
+[ext_resource type="Script" uid="uid://cxwma55qat5vp" path="res://Scripts/pipecontrol_3.gd" id="2_rtool"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_113un"]
+size = Vector2(10, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpsqf"]
+size = Vector2(33.4688, 10.5)
+
+[node name="Control" type="TextureButton"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1097.0
+offset_bottom = -593.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(27.5, 27.5)
+texture_normal = ExtResource("1_113un")
+script = ExtResource("2_rtool")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 32)
+shape = SubResource("RectangleShape2D_113un")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(48.5, -0.5)
+shape = SubResource("RectangleShape2D_rpsqf")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
